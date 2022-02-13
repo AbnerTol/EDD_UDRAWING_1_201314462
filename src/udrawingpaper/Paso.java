@@ -12,8 +12,11 @@ import java.util.Random;
  */
 public class Paso {
 
+    int numeroDePasos = 0;
     ListaColaRecepcion colaRecepcion = new ListaColaRecepcion();
     ReadJsonFile users = new ReadJsonFile();
+    
+    
 
     int NumeroPasos = 0;
 
@@ -43,6 +46,11 @@ public class Paso {
     // Ejecuta el método de la clase ReadJsonFile
     public void CrearUsuarios() {
         users.CreateUsers();
+    }
+    
+    public void CrearVentanillas( int cantidad )
+    {
+        
     }
 
 }

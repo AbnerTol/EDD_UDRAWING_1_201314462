@@ -13,12 +13,17 @@ public class Ventanilla {
     private int codigoVentanilla;
     private Usuario usuarioActivo;
     
-    public Ventanilla( int codigoVentanilla, Usuario usuarioActivo)
+    public Ventanilla( int codigoVentanilla, Usuario usuarioActivo )
     {
         this.codigoVentanilla = codigoVentanilla;
         this.usuarioActivo = usuarioActivo;
     }
     
+    public String getAllInfo()
+    {
+        return "Código: " + this.codigoVentanilla;
+    }
+
     
     
 }
