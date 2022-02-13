@@ -30,15 +30,17 @@ public class ListaColaImagenVentanilla {
     
     
     // _________________________________________________________________________Inserciones________________________________________________________________________________
-    public void insertarPrincipio(ColaImagenVentanilla imagen) {
-        ListaColaImagenVentanilla.Nodo nodo = new ListaColaImagenVentanilla.Nodo( imagen );
+   public void insertarPrincipio( Ventanilla ventanilla ) {
+        // RREGLAR ESTO 
+       Nodo nodo = new Nodo( null );
         nodo.siguiente = cabeza;
         cabeza = nodo;
 
         tamañoLista++;
-
-        System.out.println("Nuevo usuario en cola de recepción: " + imagen.getAllInfo());
+        
+        System.out.println("Nuevo usuario en cola de recepción: " + ventanilla.getAllInfo() );
     }
+    
 
     
 }

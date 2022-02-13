@@ -28,13 +28,54 @@ public class ListaVentanillas {
     }   
     
     public void insertarPrincipio( Ventanilla ventanilla ) {
-        ListaVentanillas.Nodo nodo = new ListaVentanillas.Nodo( ventanilla );
+        Nodo nodo = new Nodo( ventanilla );
         nodo.siguiente = cabeza;
         cabeza = nodo;
 
         tamañoLista++;
 
-        System.out.println("Nueva ventanilla creada: " + ventanilla.getAllInfo());
+        System.out.print("Nueva ventanillaaa: " + ventanilla.getAllInfo());
+    }
+
+    public void buscarVentanillaLibre()
+    {
+        if (tamañoLista >= 1) {
+            Nodo tempNodo = cabeza;
+
+            while (tempNodo != null) {
+                
+                if( tempNodo.ventanilla.verificarUsuario()== null )
+                {
+                    System.out.println("Ventanilla disponible: " + tempNodo.ventanilla.getAllInfo() );
+                    break;
+                }
+
+                else
+                {
+                    tempNodo = tempNodo.siguiente;                    
+                }
+            }
+        } else {
+            System.out.println("Lista vacía");
+        }
     }
     
+    public void imprimirLista() {
+        if (tamañoLista >= 1) {
+            Nodo tempNodo = cabeza;
+
+            while (tempNodo != null) {
+                System.out.println(tempNodo.ventanilla.getAllInfo());
+                tempNodo = tempNodo.siguiente;
+            }
+        } else {
+            System.out.println("Lista vacía");
+        }
+    }
+    
+    public int tamañoLista()
+    {
+        return this.tamañoLista;
+    }
+
 }

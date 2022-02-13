@@ -21,7 +21,12 @@ public class Ventanilla {
     
     public String getAllInfo()
     {
-        return "Código: " + this.codigoVentanilla;
+        return "Código " + this.codigoVentanilla;
+    }
+    
+    public Usuario verificarUsuario()
+    {
+        return this.usuarioActivo;
     }
 
     

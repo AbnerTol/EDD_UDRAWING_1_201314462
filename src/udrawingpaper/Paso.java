@@ -16,6 +16,7 @@ public class Paso {
     ListaColaRecepcion colaRecepcion = new ListaColaRecepcion();
     ReadJsonFile users = new ReadJsonFile();
     
+    ListaVentanillas listaVentanillas = new ListaVentanillas();
     
 
     int NumeroPasos = 0;
@@ -30,6 +31,10 @@ public class Paso {
         System.out.println("_____________________________________________________________________________________________________________________________________________________");
         
         AgregarUsuarioAColaRecepción();
+        //CrearVentanillas(NumeroPasos);
+        LlenarVentanilla();
+        
+        
     }
 
     public void AgregarUsuarioAColaRecepción()
@@ -50,7 +55,23 @@ public class Paso {
     
     public void CrearVentanillas( int cantidad )
     {
-        
-    }
 
+        for( int i=1; i<=cantidad; i++ )
+        {
+            Ventanilla ventanilla = new Ventanilla( i, null );
+            listaVentanillas.insertarPrincipio(ventanilla);
+        }
+        
+        listaVentanillas.imprimirLista();
+       
+    }
+    
+    public void LlenarVentanilla()
+    {
+        if( listaVentanillas.tamañoLista()>0 )
+        {
+            
+            listaVentanillas.buscarVentanillaLibre();
+        }
+    }
 }

@@ -44,6 +44,8 @@ public class UDrawingPaper {
                     //2.Crear Ventanillas
                     case 2:
                         int numeroVentanillas = Integer.parseInt( JOptionPane.showInputDialog(null, "Ingrese el número de ventanillas: ", "Insertando", 3) );
+
+                        paso.CrearVentanillas( numeroVentanillas);
                         
                     break;
                     
