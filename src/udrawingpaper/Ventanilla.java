@@ -21,7 +21,17 @@ public class Ventanilla {
     
     public String getAllInfo()
     {
-        return "Código " + this.codigoVentanilla;
+        
+        if( usuarioActivo == null )
+        {
+            return "Código ventanillia: " + this.codigoVentanilla + " Usuario : VACÍO" ;
+        }
+        else
+        {
+            return "Código ventanillia: " + this.codigoVentanilla + " Usuario[" + usuarioActivo.getAllInfo() +"]";
+        }
+        
+       
     }
     
     public Usuario verificarUsuario()
@@ -32,8 +42,9 @@ public class Ventanilla {
     public void recibirUsuario( Usuario usuarioActivo )
     {
         this.usuarioActivo = usuarioActivo;
+        System.out.println("Usuario recibido correctamente a Ventanilla: " + codigoVentanilla);
     }
-
+   
     
     
 }

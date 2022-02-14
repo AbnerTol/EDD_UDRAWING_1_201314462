@@ -57,12 +57,21 @@ public class Paso {
     //Este servirá para ir a buscar el siguiente usuario en la Cola de recepción. Este se unirá a
     public void hacerPasarSiguienteUsuarioAVentanilla()
     {
-        Usuario usuario;
         if( colaRecepcion.tamañoLista()>0 )
         {
-            Usuario temp1 = colaRecepcion.eliminarPrimerCliente();
-                    
-            System.out.println("Info usuario: " + temp1.getAllInfo());
+                       
+            if( listaVentanillas.verificarSiHayVentanillaLibre() )
+            {
+                Usuario temp1 = colaRecepcion.eliminarPrimerCliente();
+                System.out.println("Info usuario: " + temp1.getAllInfo());
+                listaVentanillas.ingresarAVentanillaLibre( temp1 );
+                
+            }
+            else
+            {
+                System.out.println("No existen ventanillas disponibles, espere un momento.");
+            }
+            
         }
     }
     
@@ -87,17 +96,7 @@ public class Paso {
        
         
     }
-    
-    //Este otro
-    public void LlenarVentanilla( Usuario usuario )
-    {
-        if( listaVentanillas.tamañoLista()>0 )
-        {
-            
-            listaVentanillas.buscarVentanillaLibre( usuario );
-        }
-    }
-    
+        
     public void ImprimirListaUsuariosRecepcion()
     {
         colaRecepcion.imprimirLista();

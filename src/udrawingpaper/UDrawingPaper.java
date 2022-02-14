@@ -37,6 +37,10 @@ public class UDrawingPaper {
 
                 switch (opcion) {
                     
+                    //Clear Console (Hidden)
+                    case 0:
+                        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                        break;
                     //Cargar Json
                     case 1:
                         paso.CrearUsuarios();
@@ -66,7 +70,7 @@ public class UDrawingPaper {
 
                         break;
                         
-
+                    //(Hidden)
                     case 20:
                         try {
 
@@ -76,6 +80,7 @@ public class UDrawingPaper {
                         System.out.println("Error: " + e);
                     }
                     break;
+                    //(Hidden)
                     case 21:
                         try {
 

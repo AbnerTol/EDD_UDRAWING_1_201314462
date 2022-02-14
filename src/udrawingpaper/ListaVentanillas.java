@@ -55,18 +55,19 @@ public class ListaVentanillas {
         }
     }
 
-    public void buscarVentanillaLibre( Usuario usuario )
+    public void ingresarAVentanillaLibre( Usuario usuario )
     {
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
 
-            System.out.println("Usuario recibido: " + usuario.getAllInfo());
-            
+                      
             while (tempNodo != null) {
                 
                 if( tempNodo.ventanilla.verificarUsuario()== null )
                 {
+                    tempNodo.ventanilla.recibirUsuario(usuario);
                     System.out.println("Ventanilla disponible: " + tempNodo.ventanilla.getAllInfo() );
+                    System.out.println("Usuario que se envía a ventanilla: " + usuario.getAllInfo());
                     break;
                 }
 
@@ -77,8 +78,29 @@ public class ListaVentanillas {
                 }
             }
         } else {
-            System.out.println("Lista vacía");
+            System.out.println("No existen ventanillas creadas");
         }
+    }
+    
+    public boolean verificarSiHayVentanillaLibre()
+    {
+        boolean disponible = false;
+        
+        if (tamañoLista >= 1) {
+            Nodo tempNodo = cabeza;
+
+            while (tempNodo != null) {
+
+                if (tempNodo.ventanilla.verificarUsuario() == null) {
+                    disponible = true;
+                    break;
+                } else {
+                    tempNodo = tempNodo.siguiente;
+
+                }
+            }
+        }         
+        return disponible;
     }
     
     public void imprimirLista() {
