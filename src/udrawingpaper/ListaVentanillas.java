@@ -27,21 +27,41 @@ public class ListaVentanillas {
         }
     }   
     
-    public void insertarPrincipio( Ventanilla ventanilla ) {
-        Nodo nodo = new Nodo( ventanilla );
-        nodo.siguiente = cabeza;
-        cabeza = nodo;
+//    public void insertarPrincipio( Ventanilla ventanilla ) {
+//        Nodo nodo = new Nodo( ventanilla );
+//        nodo.siguiente = cabeza;
+//        cabeza = nodo;
+//
+//        tamañoLista++;
+//
+//        System.out.print("Nueva ventanillaaa: " + ventanilla.getAllInfo());
+//    }
+    
+    public void insertarFinal( Ventanilla ventanilla  ) {
+        if (tamañoLista >= 1) {
+            Nodo tempNodo = cabeza;
+            Nodo nodo = new Nodo(ventanilla);
 
-        tamañoLista++;
+            while (tempNodo.siguiente != null) {
+                tempNodo = tempNodo.siguiente;
+            }
 
-        System.out.print("Nueva ventanillaaa: " + ventanilla.getAllInfo());
+            tempNodo.siguiente = nodo;
+            tamañoLista++;
+        } else {
+            Nodo nodo = new Nodo(ventanilla);
+            cabeza = nodo;
+            tamañoLista++;
+        }
     }
 
-    public void buscarVentanillaLibre()
+    public void buscarVentanillaLibre( Usuario usuario )
     {
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
 
+            System.out.println("Usuario recibido: " + usuario.getAllInfo());
+            
             while (tempNodo != null) {
                 
                 if( tempNodo.ventanilla.verificarUsuario()== null )
@@ -52,7 +72,8 @@ public class ListaVentanillas {
 
                 else
                 {
-                    tempNodo = tempNodo.siguiente;                    
+                    tempNodo = tempNodo.siguiente;             
+                    
                 }
             }
         } else {

@@ -45,7 +45,7 @@ public class UDrawingPaper {
                     case 2:
                         int numeroVentanillas = Integer.parseInt( JOptionPane.showInputDialog(null, "Ingrese el número de ventanillas: ", "Insertando", 3) );
 
-                        paso.CrearVentanillas( numeroVentanillas);
+                        paso.CrearVentanillas( numeroVentanillas );
                         
                     break;
                     
@@ -65,6 +65,26 @@ public class UDrawingPaper {
                     case 11:
 
                         break;
+                        
+
+                    case 20:
+                        try {
+
+                        paso.ImprimirListaUsuariosRecepcion();
+
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                    break;
+                    case 21:
+                        try {
+
+                        paso.ImprimirListaVentanillas();
+
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                    break;
                 }
             } catch (Exception e) {
 

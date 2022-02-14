@@ -31,12 +31,17 @@ public class Paso {
         System.out.println("_____________________________________________________________________________________________________________________________________________________");
         
         AgregarUsuarioAColaRecepción();
-        //CrearVentanillas(NumeroPasos);
-        LlenarVentanilla();
+
+        hacerPasarSiguienteUsuarioAVentanilla();
         
         
     }
 
+    // Ejecuta el método de la clase ReadJsonFile
+    public void CrearUsuarios() {
+        users.CreateUsers();
+    }
+    
     public void AgregarUsuarioAColaRecepción()
     {
         Random random = new Random();
@@ -45,33 +50,61 @@ public class Paso {
         Integer.parseInt(temp1[0]);
         Usuario usuario1 = new Usuario(Integer.parseInt(temp1[0]), temp1[1], Integer.parseInt(temp1[2]), Integer.parseInt(temp1[3]));
 
-        colaRecepcion.insertarPrincipio(usuario1);
+        colaRecepcion.insertarFinal(usuario1);
 
     }
-    // Ejecuta el método de la clase ReadJsonFile
-    public void CrearUsuarios() {
-        users.CreateUsers();
+    
+    //Este servirá para ir a buscar el siguiente usuario en la Cola de recepción. Este se unirá a
+    public void hacerPasarSiguienteUsuarioAVentanilla()
+    {
+        Usuario usuario;
+        if( colaRecepcion.tamañoLista()>0 )
+        {
+            Usuario temp1 = colaRecepcion.eliminarPrimerCliente();
+                    
+            System.out.println("Info usuario: " + temp1.getAllInfo());
+        }
     }
     
     public void CrearVentanillas( int cantidad )
     {
 
-        for( int i=1; i<=cantidad; i++ )
+        try
         {
-            Ventanilla ventanilla = new Ventanilla( i, null );
-            listaVentanillas.insertarPrincipio(ventanilla);
+            for (int i = 1; i <= cantidad; i++) {
+                Ventanilla ventanilla = new Ventanilla(i, null);
+                listaVentanillas.insertarFinal(ventanilla);
+            }
+            
+            System.out.println("Ventanillas creadas exitosamente");
+            
         }
         
-        listaVentanillas.imprimirLista();
+        catch( Exception e )
+        {
+            
+        }
        
+        
     }
     
-    public void LlenarVentanilla()
+    //Este otro
+    public void LlenarVentanilla( Usuario usuario )
     {
         if( listaVentanillas.tamañoLista()>0 )
         {
             
-            listaVentanillas.buscarVentanillaLibre();
+            listaVentanillas.buscarVentanillaLibre( usuario );
         }
+    }
+    
+    public void ImprimirListaUsuariosRecepcion()
+    {
+        colaRecepcion.imprimirLista();
+    }
+    
+    public void ImprimirListaVentanillas()
+    {
+        listaVentanillas.imprimirLista();
     }
 }

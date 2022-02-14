@@ -28,6 +28,11 @@ public class Ventanilla {
     {
         return this.usuarioActivo;
     }
+    
+    public void recibirUsuario( Usuario usuarioActivo )
+    {
+        this.usuarioActivo = usuarioActivo;
+    }
 
     
     
