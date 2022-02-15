@@ -33,7 +33,7 @@ public class Paso {
         AgregarUsuarioAColaRecepción();
 
         hacerPasarSiguienteUsuarioAVentanilla();
-        
+        agregarImagenAVentanillasCorrespondientes();
         
     }
 
@@ -54,7 +54,7 @@ public class Paso {
 
     }
     
-    //Este servirá para ir a buscar el siguiente usuario en la Cola de recepción. Este se unirá a
+    //Este servirá para ir a buscar el siguiente usuario en la Cola de recepción y agregarlo.
     public void hacerPasarSiguienteUsuarioAVentanilla()
     {
         if( colaRecepcion.tamañoLista()>0 )
@@ -105,5 +105,10 @@ public class Paso {
     public void ImprimirListaVentanillas()
     {
         listaVentanillas.imprimirLista();
+    }
+    
+    public void agregarImagenAVentanillasCorrespondientes()
+    {
+        listaVentanillas.AgregarImagenAVentanilla();
     }
 }

@@ -52,12 +52,12 @@ public class ReadJsonFile {
         temp4[0] = "4"; //id
         temp4[1] = "Nombre4 Apellido4"; //nombre
         temp4[2] = "4"; //img color
-        temp4[3] = "0"; //img byn
+        temp4[3] = "1"; //img byn
         
         temp5 = new String[4];
         temp5[0] = "5"; //id
         temp5[1] = "Nombre5 Apellido5"; //nombre
-        temp5[2] = "0"; //img color
+        temp5[2] = "1"; //img color
         temp5[3] = "2"; //img byn
        
         temp6 = new String[4];

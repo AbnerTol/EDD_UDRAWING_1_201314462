@@ -8,20 +8,20 @@ package udrawingpaper;
  *
  * @author Brown
  */
-public class ColaImagenVentanilla {
+public class Imagen {
     
     String RutaImagen;
     String TipoImagen;
-            
-    ColaImagenVentanilla( String RutaImagen, String TipoImagen )
-    {
+
+    Imagen(String RutaImagen, String TipoImagen) {
         this.RutaImagen = RutaImagen;
         this.TipoImagen = TipoImagen;
     }
-    
+
     public String getAllInfo() {
-        String info = "Ruta: " + RutaImagen + " Tipo : "  + TipoImagen;
+        String info = "Ruta: " + RutaImagen + " Tipo : " + TipoImagen;
         return info;
     }
 
+    
 }

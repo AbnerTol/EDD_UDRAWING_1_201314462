@@ -29,4 +29,18 @@ public class Usuario {
         return info;
     }
 
+    public int getColorImages()
+    {
+        return this.color;
+    }
+    
+    public int getBWImages() 
+    {
+        return this.byn;
+    }
+    
+    public String getUserName()
+    {
+        return this.nombre;
+    }
 }

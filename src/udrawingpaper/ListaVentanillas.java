@@ -12,8 +12,7 @@ public class ListaVentanillas {
     
     private Nodo cabeza;
     private int tamañoLista;
-
-
+    
     private class Nodo {
 
         public Ventanilla ventanilla;
@@ -121,4 +120,35 @@ public class ListaVentanillas {
         return this.tamañoLista;
     }
 
+    public void VaciarVentanilla( int numero )
+    {
+        
+    }
+    //___________________________________________________________________________________Imágenes_______________________________________________________________________________
+    
+    
+    
+    //Este método recorre las ventanillas, y en cada una, intenta agregar un nodo a su sub lista de imágenes
+    public void AgregarImagenAVentanilla()
+    {
+        if ( tamañoLista >= 1 ) {
+            Nodo tempNodo = cabeza;
+
+            while (tempNodo != null) {
+
+                try
+                {
+                    tempNodo.ventanilla.AgregarImagen();                    
+                }
+                catch( Exception e )
+                {
+                    System.out.println("Error en metodo AgregarImagenAVentanilla: " + e);
+                }
+                tempNodo = tempNodo.siguiente;
+            }
+        } else {
+            System.out.println("No existen ventanillas");
+        }
+        
+    }
 }

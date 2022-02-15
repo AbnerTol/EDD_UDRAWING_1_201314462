@@ -4,43 +4,63 @@
  */
 package udrawingpaper;
 
+/**
+ *
+ * @author Brown
+ */
+
 import java.awt.Desktop;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ListaColaImagenVentanilla {
+public class ListaImagen {
     
     private Nodo cabeza;
     private int tamañoLista;
 
-
     private class Nodo {
 
-        public ColaImagenVentanilla imagen;
+        public Imagen imagen;
         public Nodo siguiente = null;
         int tamañoLista = 0;
 
         //Constructor
-        public Nodo( ColaImagenVentanilla imagen ) {
-            this.imagen= imagen;
+        public Nodo( Imagen imagen ) {
+            this.imagen = imagen;
         }
-    }   
-    
-    
+    }
+
     // _________________________________________________________________________Inserciones________________________________________________________________________________
-   public void insertarPrincipio( Ventanilla ventanilla ) {
-        // RREGLAR ESTO 
-       Nodo nodo = new Nodo( null );
+    
+    public void insertarPrincipio( Imagen imagen ) {
+        Nodo nodo = new Nodo( imagen );
         nodo.siguiente = cabeza;
         cabeza = nodo;
 
         tamañoLista++;
+
+        System.out.println("Imagen agregada: " + imagen.getAllInfo());
         
-        System.out.println("Nuevo usuario en cola de recepción: " + ventanilla.getAllInfo() );
+        System.out.print ("lista completa:  ");
+        imprimirLista();
+        
     }
     
+    public void imprimirLista() {
+        if (tamañoLista >= 1) {
+            Nodo tempNodo = cabeza;
 
+            while (tempNodo != null) {
+                System.out.println(tempNodo.imagen.getAllInfo());
+                tempNodo = tempNodo.siguiente;
+            }
+        } else {
+            System.out.println("Lista vacía");
+        }
+
+    }
     
+       
 }
