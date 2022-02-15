@@ -33,20 +33,37 @@ public class ListaImagen {
     }
 
     // _________________________________________________________________________Inserciones________________________________________________________________________________
-    
-    public void insertarPrincipio( Imagen imagen ) {
-        Nodo nodo = new Nodo( imagen );
-        nodo.siguiente = cabeza;
-        cabeza = nodo;
-
-        tamañoLista++;
-
-        System.out.println("Imagen agregada: " + imagen.getAllInfo());
         
-        System.out.print ("lista completa:  ");
-        imprimirLista();
-        
+    public void insertarFinal( Imagen imagen ) {
+        if (tamañoLista >= 1) {
+            Nodo tempNodo = cabeza;
+            Nodo nodo = new Nodo(imagen);
+
+            while (tempNodo.siguiente != null) {
+                tempNodo = tempNodo.siguiente;
+            }
+
+            tempNodo.siguiente = nodo;
+            tamañoLista++;
+            
+            System.out.println("Imagen agregada: " + imagen.getAllInfo());        
+            System.out.print ("lista completa:  ");
+            
+            System.out.println("TAMAÑO LISTA: " + this.tamañoLista);
+            imprimirLista();
+            
+        } else {
+            Nodo nodo = new Nodo(imagen);
+            cabeza = nodo;
+            tamañoLista++;
+            
+            System.out.println("Imagen agregada: " + imagen.getAllInfo());        
+            System.out.print ("lista completa:  ");
+            System.out.println("TAMAÑO LISTA: " + this.tamañoLista);
+            imprimirLista();
+        }
     }
+    
     
     public void imprimirLista() {
         if (tamañoLista >= 1) {

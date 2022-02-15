@@ -70,13 +70,13 @@ public class Ventanilla {
         {
             this.color--;
             Imagen imagen = new Imagen(usuarioActivo.getUserName(), "Color");
-            listaImagen.insertarPrincipio(imagen);
+            listaImagen.insertarFinal(imagen);
             
         }else if( this.bw>0 )
         {
             this.bw--;
             Imagen imagen = new Imagen(usuarioActivo.getUserName(), "BW");
-            listaImagen.insertarPrincipio(imagen);
+            listaImagen.insertarFinal(imagen);
         }
         
         else
