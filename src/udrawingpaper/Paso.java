@@ -43,8 +43,8 @@ public class Paso {
         
         AgregarUsuarioAColaRecepción();
 
-        hacerPasarSiguienteUsuarioAVentanilla();
         agregarImagenAVentanillasCorrespondientes();
+        hacerPasarSiguienteUsuarioAVentanilla();
         
     }
 
