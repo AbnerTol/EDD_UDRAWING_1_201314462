@@ -18,9 +18,10 @@ public class Paso {
     
     ListaVentanillas listaVentanillas = new ListaVentanillas();
     
-
     int NumeroPasos = 0;
 
+    ListaClientesEnEspera listaClientesEnEspera = new ListaClientesEnEspera();
+            
     public void EjecutarPaso() {
 
         NumeroPasos++;
@@ -62,9 +63,9 @@ public class Paso {
                        
             if( listaVentanillas.verificarSiHayVentanillaLibre() )
             {
-                Usuario temp1 = colaRecepcion.eliminarPrimerCliente();
-                System.out.println("Info usuario: " + temp1.getAllInfo());
-                listaVentanillas.ingresarAVentanillaLibre( temp1 );
+                Usuario usuario = colaRecepcion.eliminarPrimerCliente();
+                System.out.println("Info usuario: " + usuario.getAllInfo());
+                listaVentanillas.ingresarAVentanillaLibre( usuario );
                 
             }
             else
@@ -81,7 +82,7 @@ public class Paso {
         try
         {
             for (int i = 1; i <= cantidad; i++) {
-                Ventanilla ventanilla = new Ventanilla(i, null);
+                Ventanilla ventanilla = new Ventanilla(i, null, listaClientesEnEspera);
                 listaVentanillas.insertarFinal(ventanilla);
             }
             

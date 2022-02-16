@@ -12,6 +12,19 @@ public class ListaVentanillas {
     
     private Nodo cabeza;
     private int tamañoLista;
+    private ListaClientesEnEspera listaClientesEnEspera;
+    
+    public ListaVentanillas()
+    {
+        listaClientesEnEspera = new ListaClientesEnEspera();
+    }
+    
+    //Recibe la referencia hacia la lista de clientes en espera, creada en la clase Paso
+    public void getListaClientesEnEspera( ListaClientesEnEspera listaClientesEnEspera )
+    {
+        this.listaClientesEnEspera = listaClientesEnEspera;
+    }
+    
     
     private class Nodo {
 
@@ -36,6 +49,7 @@ public class ListaVentanillas {
 //        System.out.print("Nueva ventanillaaa: " + ventanilla.getAllInfo());
 //    }
     
+    //Crea una nueva ventanilla y la coloca al final
     public void insertarFinal( Ventanilla ventanilla  ) {
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
@@ -53,7 +67,8 @@ public class ListaVentanillas {
             tamañoLista++;
         }
     }
-
+    
+    //Ingresa un Usuario a la primer ventanilla que esté disponible
     public void ingresarAVentanillaLibre( Usuario usuario )
     {
         if (tamañoLista >= 1) {
@@ -120,10 +135,6 @@ public class ListaVentanillas {
         return this.tamañoLista;
     }
 
-    public void VaciarVentanilla( int numero )
-    {
-        
-    }
     //___________________________________________________________________________________Imágenes_______________________________________________________________________________
     
     

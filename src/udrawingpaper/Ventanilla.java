@@ -16,13 +16,17 @@ public class Ventanilla {
     private int bw;
     
     private ListaImagen listaImagen;
+    private ListaClientesEnEspera listaClientesEnEspera;
     
-    public Ventanilla( int codigoVentanilla, Usuario usuarioActivo )
+    
+    public Ventanilla( int codigoVentanilla, Usuario usuarioActivo, ListaClientesEnEspera listaClientesEnEspera )
     {
         this.codigoVentanilla = codigoVentanilla;
         this.usuarioActivo = usuarioActivo;
         
         listaImagen = new ListaImagen();
+        
+        listaClientesEnEspera = new ListaClientesEnEspera();
     }
     
     public String getAllInfo()
@@ -82,12 +86,18 @@ public class Ventanilla {
         else
         {
             //hace falta crear un método que 'saque' el usuario actual y lo envíe a donde pertenece.
-            System.out.println("Este usuario no tiene más imágenes por agregar");
+            System.out.println("Este usuario no tiene más imágenes por agregar, será enviado a clientes en espera y se asignará una impresora cuando haya una libre");
         }
     
             
         
     }
     
-    
+    //Elimina el usuario de la ventanilla y lo envía a clientes en espera
+    public Usuario VaciarVentanilla()
+    {
+        
+        usuarioActivo = null;
+        return null;
+    }
 }
