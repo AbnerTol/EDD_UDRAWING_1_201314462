@@ -12,16 +12,26 @@ import java.util.Random;
  */
 public class Paso {
 
-    int numeroDePasos = 0;
-    ListaColaRecepcion colaRecepcion = new ListaColaRecepcion();
-    ReadJsonFile users = new ReadJsonFile();
+    int numeroDePasos;
+    ListaColaRecepcion colaRecepcion;
+    ReadJsonFile users;
     
-    ListaVentanillas listaVentanillas = new ListaVentanillas();
+    ListaVentanillas listaVentanillas;
     
     int NumeroPasos = 0;
 
     ListaClientesEnEspera listaClientesEnEspera = new ListaClientesEnEspera();
-            
+    
+    //Constructor
+    public Paso()
+    {
+        numeroDePasos = 0;
+        users = new ReadJsonFile();
+        colaRecepcion = new ListaColaRecepcion();
+        listaVentanillas = new ListaVentanillas();
+        listaVentanillas.setListaClientesEnEspera( listaClientesEnEspera );
+    }
+    
     public void EjecutarPaso() {
 
         NumeroPasos++;
@@ -64,7 +74,7 @@ public class Paso {
             if( listaVentanillas.verificarSiHayVentanillaLibre() )
             {
                 Usuario usuario = colaRecepcion.eliminarPrimerCliente();
-                System.out.println("Info usuario: " + usuario.getAllInfo());
+                //System.out.println("Info usuario: " + usuario.getAllInfo());
                 listaVentanillas.ingresarAVentanillaLibre( usuario );
                 
             }
@@ -111,5 +121,10 @@ public class Paso {
     public void agregarImagenAVentanillasCorrespondientes()
     {
         listaVentanillas.AgregarImagenAVentanilla();
+    }
+    
+    public void ImprimirListaClientesEnEspera()
+    {
+        listaClientesEnEspera.imprimirLista();
     }
 }

@@ -16,11 +16,11 @@ public class ListaVentanillas {
     
     public ListaVentanillas()
     {
-        listaClientesEnEspera = new ListaClientesEnEspera();
+        //listaClientesEnEspera = new ListaClientesEnEspera();
     }
     
     //Recibe la referencia hacia la lista de clientes en espera, creada en la clase Paso
-    public void getListaClientesEnEspera( ListaClientesEnEspera listaClientesEnEspera )
+    public void setListaClientesEnEspera( ListaClientesEnEspera listaClientesEnEspera )
     {
         this.listaClientesEnEspera = listaClientesEnEspera;
     }
@@ -118,6 +118,9 @@ public class ListaVentanillas {
     }
     
     public void imprimirLista() {
+        
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("Impresión de Lista Ventanillas: ");
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
 

@@ -75,6 +75,8 @@ public class ListaColaRecepcion {
 
     // _________________________________________________________________________Imprimir Lista________________________________________________________________________________
     public void imprimirLista() {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("Impresión de Lista Cola de Recepción: ");
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
 

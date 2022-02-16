@@ -47,9 +47,8 @@ public class ListaImagen {
             tamañoLista++;
             
             System.out.println("Imagen agregada: " + imagen.getAllInfo());        
-            System.out.print ("lista completa:  ");
-            
-            System.out.println("TAMAÑO LISTA: " + this.tamañoLista);
+
+            System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
             imprimirLista();
             
         } else {
@@ -58,14 +57,15 @@ public class ListaImagen {
             tamañoLista++;
             
             System.out.println("Imagen agregada: " + imagen.getAllInfo());        
-            System.out.print ("lista completa:  ");
-            System.out.println("TAMAÑO LISTA: " + this.tamañoLista);
+            System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
             imprimirLista();
         }
     }
     
     
     public void imprimirLista() {
+
+        System.out.println("Impresión de Lista Imagen: " + "[");
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
 
@@ -76,7 +76,7 @@ public class ListaImagen {
         } else {
             System.out.println("Lista vacía");
         }
-
+        System.out.println("]");
     }
     
        

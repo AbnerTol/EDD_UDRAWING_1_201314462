@@ -26,7 +26,7 @@ public class Ventanilla {
         
         listaImagen = new ListaImagen();
         
-        listaClientesEnEspera = new ListaClientesEnEspera();
+        this.listaClientesEnEspera = listaClientesEnEspera;
     }
     
     public String getAllInfo()
@@ -62,42 +62,41 @@ public class Ventanilla {
     {
         this.color = usuarioActivo.getColorImages();
         this.bw = usuarioActivo.getBWImages();
-        System.out.println("setTypes() ejecutado correctamente: " + color + " " + bw);
+
         
     }
     
     
     public void AgregarImagen()
     {
-      
-        if( this.color >0 )
+        if( this.usuarioActivo != null )
         {
-            this.color--;
-            Imagen imagen = new Imagen(usuarioActivo.getUserName(), "Color");
-            listaImagen.insertarFinal(imagen);
+            //Valida si aún existen imágenes a color
+            if (this.color > 0) {
+                this.color--;
+                Imagen imagen = new Imagen(usuarioActivo.getUserName(), "Color");
+                listaImagen.insertarFinal(imagen);
+
+            } //En caso que no hayan imágnes a color entonces valida las imágenes blanco y negro
+            else if (this.bw > 0) {
+                this.bw--;
+                Imagen imagen = new Imagen(usuarioActivo.getUserName(), "BW");
+                listaImagen.insertarFinal(imagen);
+            } //En caso que no existan más imágenes, toma la referencia del usuario y la envía hacia ListaClientesEnEspera y elimina la referencia de esta ventanilla, quedando así disponible.
+            else {
+                VaciarVentanilla();
+                System.out.println("Ventanilla " + this.codigoVentanilla + " liberada");
+
+            }
             
-        }else if( this.bw>0 )
-        {
-            this.bw--;
-            Imagen imagen = new Imagen(usuarioActivo.getUserName(), "BW");
-            listaImagen.insertarFinal(imagen);
-        }
-        
-        else
-        {
-            //hace falta crear un método que 'saque' el usuario actual y lo envíe a donde pertenece.
-            System.out.println("Este usuario no tiene más imágenes por agregar, será enviado a clientes en espera y se asignará una impresora cuando haya una libre");
-        }
-    
-            
-        
+        }     
+                 
     }
     
     //Elimina el usuario de la ventanilla y lo envía a clientes en espera
-    public Usuario VaciarVentanilla()
+    public void VaciarVentanilla()
     {
-        
+        listaClientesEnEspera.insertarFinal(usuarioActivo);
         usuarioActivo = null;
-        return null;
     }
 }

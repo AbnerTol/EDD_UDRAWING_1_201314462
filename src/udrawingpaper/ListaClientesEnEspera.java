@@ -47,17 +47,17 @@ public class ListaClientesEnEspera {
 
             tempNodo.siguiente = nodo;
             tamañoLista++;
-            System.out.println("Nuevo usuario en cola de recepción: " + usuario.getAllInfo());
+            System.out.println("Nuevo usuario en LISTA DE ESPERA: " + usuario.getAllInfo());
         } else {
             Nodo nodo = new Nodo(usuario);
             cabeza = nodo;
             tamañoLista++;
-            System.out.println("Nuevo usuario en cola de recepción: " + usuario.getAllInfo());
+            System.out.println("Nuevo usuario en LISTA DE ESPERA: " + usuario.getAllInfo());
         }
     }
     // _________________________________________________________________________Eliminar________________________________________________________________________________
 
-    //Este sirve para eliminar el primer cliente que llegó a cola de recepción, para ser enviado a la ventanilla disponible
+    //Este sirve para eliminar el primer cliente que llegó a cola de recepción, para ser enviado a la lista de clientes atendidos
     public Usuario eliminarPrimerCliente() {
 
         Usuario temp = this.cabeza.usuario;
@@ -69,6 +69,9 @@ public class ListaClientesEnEspera {
 
     // _________________________________________________________________________Imprimir Lista________________________________________________________________________________
     public void imprimirLista() {
+        
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("Impresión de Lista de Espera: ");
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
 

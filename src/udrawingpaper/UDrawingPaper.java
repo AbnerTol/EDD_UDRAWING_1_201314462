@@ -90,6 +90,17 @@ public class UDrawingPaper {
                         System.out.println("Error: " + e);
                     }
                     break;
+                    
+                    //(Hidden)
+                    case 22:
+                        try {
+
+                        paso.ImprimirListaClientesEnEspera();
+
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                    break;
                 }
             } catch (Exception e) {
 
