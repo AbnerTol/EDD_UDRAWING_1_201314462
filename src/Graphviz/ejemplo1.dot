@@ -1,0 +1,12 @@
+digraph ejemplo1
+{
+    rankdir =LR
+    Nodo0[label="First"];
+    Nodo1[label="Second"];
+    Nodo2[shape=box, color=blue];
+    Nodo3[shape=tab,style=filled,fillcolor=red];
+
+    Nodo0 -> Nodo1;
+    Nodo1 -> Nodo2;
+    Nodo3 -> Nodo1;
+}
