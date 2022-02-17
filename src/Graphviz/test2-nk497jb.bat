@@ -1,0 +1,1 @@
+@cmd /k "dot.exe -Tpng C:\Users\NK497JB\OneDrive - EY\Documents\USAC\EDD_UDRAWING_1_201314462\src\Graphviz\ejemplo1.dot -o C:\Users\NK497JB\OneDrive - EY\Documents\USAC\EDD_UDRAWING_1_201314462\src\Graphviz\imagen.png"

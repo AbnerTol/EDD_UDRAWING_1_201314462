@@ -44,6 +44,16 @@ public class Ventanilla {
        
     }
     
+    public int getCodigoVentanilla()
+    {
+        return this.codigoVentanilla;
+    }
+    
+    public String getUserName()
+    {
+        return this.usuarioActivo.getUserName();
+    }
+    
     public Usuario verificarUsuario()
     {
         return this.usuarioActivo;

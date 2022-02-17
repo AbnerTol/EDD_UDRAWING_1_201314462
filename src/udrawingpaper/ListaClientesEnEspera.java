@@ -89,8 +89,47 @@ public class ListaClientesEnEspera {
         return this.tamañoLista;
     }
 
-    public void grafo() {
+    public String construirComandoGrafo() {
 
+        int contador = 0;
+        String comando = "digraph ejemplo1\n"
+                + "{\n"
+                + "    rankdir =LR\n";
+
+        if (tamañoLista >= 1) {
+            Nodo tempNodo = cabeza;
+
+            while (tempNodo != null) {
+
+                comando = comando + "\n" + "Nodo" + contador + "[" + "label=\"" + tempNodo.usuario.getUserName() + "\",color=\"#40e0d0\", style=filled, fillcolor=\"#1C0049\" , fontcolor=\"#FF0096\"];";
+                tempNodo = tempNodo.siguiente;
+                contador++;
+            }
+
+            tempNodo = cabeza;
+            contador = 0;
+
+            while (tempNodo != null) {
+
+                if (tempNodo.siguiente == null) {
+                    tempNodo = tempNodo.siguiente;
+                    contador++;
+
+                } else {
+                    comando = comando + "\n" + "Nodo" + contador + " -> " + "Nodo" + (contador + 1) + ";";
+                    tempNodo = tempNodo.siguiente;
+                    contador++;
+
+                }
+            }
+
+            comando = comando + "}";
+            System.out.println("COMANDO: " + "\n" + comando);
+        } else {
+            System.out.println("Lista vacía");
+        }
+
+        return comando;
     }
     
 }
