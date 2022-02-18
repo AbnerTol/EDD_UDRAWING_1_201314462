@@ -116,7 +116,7 @@ public class ListaColaRecepcion {
 
             while (tempNodo != null) {
 
-                if ( tempNodo.siguiente == null ) {
+                if (tempNodo.siguiente == null) {
                     tempNodo = tempNodo.siguiente;
                     contador++;
 
@@ -128,10 +128,16 @@ public class ListaColaRecepcion {
                 }
             }
 
+            comando = comando + "label = \"Cola de Recepción\";";
+                    
             comando = comando + "}";
-            System.out.println("COMANDO: " + "\n" + comando);
         } else {
-            System.out.println("Lista vacía");
+            System.out.println("Cola Recepción Vacía");
+
+            comando = "digraph ejemplo1\n"
+                    + "{\n"
+                    + "    rankdir =LR\n label = \"Cola de Recepción\";}";
+
         }
 
         return comando;

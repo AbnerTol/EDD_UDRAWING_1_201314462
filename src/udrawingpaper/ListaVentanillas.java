@@ -72,9 +72,9 @@ public class ListaVentanillas {
             while (tempNodo != null) {
 
                 if (tempNodo.ventanilla.verificarUsuario() == null) {
+                    System.out.print("Ventanilla disponible: " + tempNodo.ventanilla.getCodigoVentanilla() );
+                    System.out.print(",Usuario enviado: " + usuario.getUserName() + ",");
                     tempNodo.ventanilla.recibirUsuario(usuario);
-                    System.out.println("Ventanilla disponible: " + tempNodo.ventanilla.getAllInfo());
-                    System.out.println("Usuario que se envía a ventanilla: " + usuario.getAllInfo());
                     break;
                 } else {
                     tempNodo = tempNodo.siguiente;
@@ -110,6 +110,21 @@ public class ListaVentanillas {
 
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println("Impresión de Lista Ventanillas: ");
+        if (tamañoLista >= 1) {
+            Nodo tempNodo = cabeza;
+
+            while (tempNodo != null) {
+                System.out.println(tempNodo.ventanilla.getAllInfo());
+                tempNodo = tempNodo.siguiente;
+            }
+        } else {
+            System.out.println("Lista vacía");
+        }
+    }
+    
+    //Imprime las imágenes contenidas en cada ventanilla
+    public void imprimirListaDeImagenesEnVentanilla()
+    {
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
 
@@ -181,10 +196,14 @@ public class ListaVentanillas {
                 }
             }
 
+            comando = comando + "label = \"Ventanillas\";";
             comando = comando + "}";
-            System.out.println("COMANDO: " + "\n" + comando);
         } else {
             System.out.println("Lista vacía");
+            
+            comando = "digraph ejemplo1\n"
+                    + "{\n"
+                    + "    rankdir =LR\n label = \"Ventanillas\";}";
         }
 
         return comando;

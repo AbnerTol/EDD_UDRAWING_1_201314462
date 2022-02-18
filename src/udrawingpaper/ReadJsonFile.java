@@ -19,6 +19,7 @@ public class ReadJsonFile {
     public void CreateUsers()
     {
         //Creación de usuarios
+        String temp0[];
         String temp1[];
         String temp2[];
         String temp3[];
@@ -40,6 +41,11 @@ public class ReadJsonFile {
         String temp19[];
         String temp20[];
         
+        temp0 = new String[4];
+        temp0[0] = "1"; //id
+        temp0[1] = "Camilo Sesto"; //nombre
+        temp0[2] = "3"; //img color
+        temp0[3] = "1"; //img byn
         
         temp1= new String[4];
         temp1[0] = "1"; //id
@@ -102,66 +108,67 @@ public class ReadJsonFile {
         temp10[3] = "1"; //img byn
         
         temp11 = new String[4];
-        temp10[0] = "11"; //id
-        temp10[1] = "Stella Cox"; //nombre
-        temp10[2] = "5"; //img color
-        temp10[3] = "1"; //img byn
+        temp11[0] = "11"; //id
+        temp11[1] = "Stella Cox"; //nombre
+        temp11[2] = "5"; //img color
+        temp11[3] = "1"; //img byn
         
         temp12 = new String[4];
-        temp10[0] = "12"; //id
-        temp10[1] = "Alexander Corsair"; //nombre
-        temp10[2] = "5"; //img color
-        temp10[3] = "1"; //img byn
+        temp12[0] = "12"; //id
+        temp12[1] = "Alexander Corsair"; //nombre
+        temp12[2] = "5"; //img color
+        temp12[3] = "1"; //img byn
         
         temp13 = new String[4];
-        temp10[0] = "13"; //id
-        temp10[1] = "Alison Yamaha"; //nombre
-        temp10[2] = "5"; //img color
-        temp10[3] = "1"; //img byn
+        temp13[0] = "13"; //id
+        temp13[1] = "Alison Yamaha"; //nombre
+        temp13[2] = "5"; //img color
+        temp13[3] = "1"; //img byn
         
         temp14 = new String[4];
-        temp10[0] = "14"; //id
-        temp10[1] = "Alejandra Tortrix"; //nombre
-        temp10[2] = "5"; //img color
-        temp10[3] = "1"; //img byn
+        temp14[0] = "14"; //id
+        temp14[1] = "Alejandra Tortrix"; //nombre
+        temp14[2] = "5"; //img color
+        temp14[3] = "1"; //img byn
         
         temp15 = new String[4];
-        temp10[0] = "15"; //id
-        temp10[1] = "Juanito Nutria"; //nombre
-        temp10[2] = "5"; //img color
-        temp10[3] = "1"; //img byn
+        temp15[0] = "15"; //id
+        temp15[1] = "Juanito Nutria"; //nombre
+        temp15[2] = "5"; //img color
+        temp15[3] = "1"; //img byn
         
         temp16 = new String[4];
-        temp10[0] = "16"; //id
-        temp10[1] = "Miranda Lapiz"; //nombre
-        temp10[2] = "5"; //img color
-        temp10[3] = "1"; //img byn
+        temp16[0] = "16"; //id
+        temp16[1] = "Miranda Lapiz"; //nombre
+        temp16[2] = "5"; //img color
+        temp16[3] = "1"; //img byn
         
         temp17 = new String[4];
-        temp10[0] = "17"; //id
-        temp10[1] = "Vicente Charro"; //nombre
-        temp10[2] = "5"; //img color
-        temp10[3] = "1"; //img byn
+        temp17[0] = "17"; //id
+        temp17[1] = "Vicente Charro"; //nombre
+        temp17[2] = "5"; //img color
+        temp17[3] = "1"; //img byn
         
         temp18 = new String[4];
-        temp10[0] = "18"; //id
-        temp10[1] = "Antonio Vivalidi"; //nombre
-        temp10[2] = "5"; //img color
-        temp10[3] = "1"; //img byn
+        temp18[0] = "18"; //id
+        temp18[1] = "Antonio Vivalidi"; //nombre
+        temp18[2] = "5"; //img color
+        temp18[3] = "1"; //img byn
         
         temp19 = new String[4];
-        temp10[0] = "19"; //id
-        temp10[1] = "Teresa Disco"; //nombre
-        temp10[2] = "5"; //img color
-        temp10[3] = "1"; //img byn
+        temp19[0] = "19"; //id
+        temp19[1] = "Teresa Disco"; //nombre
+        temp19[2] = "5"; //img color
+        temp19[3] = "1"; //img byn
         
         temp20 = new String[4];
-        temp10[0] = "19"; //id
-        temp10[1] = "Ana Tax"; //nombre
-        temp10[2] = "5"; //img color
-        temp10[3] = "1"; //img byn
+        temp20[0] = "20"; //id
+        temp20[1] = "Ana Tax"; //nombre
+        temp20[2] = "5"; //img color
+        temp20[3] = "1"; //img byn
         
         user = new ArrayList<String[]>();
+        user.add(temp0);
         user.add(temp1);
         user.add(temp2);
         user.add(temp3);
@@ -171,6 +178,7 @@ public class ReadJsonFile {
         user.add(temp7);
         user.add(temp8);
         user.add(temp9);
+        user.add(temp10);
         user.add(temp11);
         user.add(temp12);
         user.add(temp13);

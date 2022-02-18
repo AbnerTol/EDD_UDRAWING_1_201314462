@@ -101,6 +101,17 @@ public class UDrawingPaper {
                         System.out.println("Error: " + e);
                     }
                     break;
+                    
+                    //(Hidden)
+                    case 23:
+                        try {
+
+                        paso.ImprimirListaDeImagenesEnVentanilla();
+
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                    break;
                 }
             } catch (Exception e) {
 

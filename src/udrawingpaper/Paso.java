@@ -60,7 +60,6 @@ public class Paso {
         Random random = new Random();
         String temp1[] = users.GetUser(random.nextInt(19) + 1);
 
-        Integer.parseInt(temp1[0]);
         Usuario usuario1 = new Usuario(Integer.parseInt(temp1[0]), temp1[1], Integer.parseInt(temp1[2]), Integer.parseInt(temp1[3]));
 
         colaRecepcion.insertarFinal(usuario1);
@@ -109,11 +108,14 @@ public class Paso {
        
         
     }
-        
+     
+    //________________________________________________________________________ Graphviz_____________________________________________________________________________________
+    
     public void ImprimirListaUsuariosRecepcion()
     {
         colaRecepcion.imprimirLista();        
         String comando = colaRecepcion.construirComandoGrafo();
+        //grafica.DeleteImage();
         grafica.WriteFile(comando);
         grafica.RunBat();
         grafica.OpenImage();
@@ -124,6 +126,7 @@ public class Paso {
         listaVentanillas.imprimirLista();
         
         String comando = listaVentanillas.construirComandoGrafo();
+        //grafica.DeleteImage();
         grafica.WriteFile(comando);
         grafica.RunBat();
         grafica.OpenImage();
@@ -139,8 +142,14 @@ public class Paso {
         listaClientesEnEspera.imprimirLista();
         
         String comando = listaClientesEnEspera.construirComandoGrafo();
+        //grafica.DeleteImage();
         grafica.WriteFile(comando);
         grafica.RunBat();
         grafica.OpenImage();
+    }
+    
+    public void ImprimirListaDeImagenesEnVentanilla()
+    {
+        listaVentanillas.imprimirListaDeImagenesEnVentanilla();
     }
 }

@@ -47,12 +47,12 @@ public class ListaClientesEnEspera {
 
             tempNodo.siguiente = nodo;
             tamañoLista++;
-            System.out.println("Nuevo usuario en LISTA DE ESPERA: " + usuario.getAllInfo());
+            System.out.println("Nuevo usuario en LISTA DE ESPERA: " + usuario.getUserName());
         } else {
             Nodo nodo = new Nodo(usuario);
             cabeza = nodo;
             tamañoLista++;
-            System.out.println("Nuevo usuario en LISTA DE ESPERA: " + usuario.getAllInfo());
+            System.out.println("Nuevo usuario en LISTA DE ESPERA: " + usuario.getUserName());
         }
     }
     // _________________________________________________________________________Eliminar________________________________________________________________________________
@@ -123,10 +123,15 @@ public class ListaClientesEnEspera {
                 }
             }
 
+            comando = comando + "label = \"Clientes en Espera\";";
             comando = comando + "}";
-            System.out.println("COMANDO: " + "\n" + comando);
+
         } else {
             System.out.println("Lista vacía");
+            
+            comando = "digraph ejemplo1\n"
+                    + "{\n"
+                    + "    rankdir =LR\n label = \"Clientes en Espera\";}";
         }
 
         return comando;

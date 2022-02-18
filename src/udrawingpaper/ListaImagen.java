@@ -46,19 +46,19 @@ public class ListaImagen {
             tempNodo.siguiente = nodo;
             tamañoLista++;
             
-            System.out.println("Imagen agregada: " + imagen.getAllInfo());        
+            System.out.println("Imagen agregada[" + imagen.getAllInfo() + "]");        
 
             System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
-            imprimirLista();
+
             
         } else {
             Nodo nodo = new Nodo(imagen);
             cabeza = nodo;
             tamañoLista++;
             
-            System.out.println("Imagen agregada: " + imagen.getAllInfo());        
+            System.out.println("Imagen agregada[" + imagen.getAllInfo() + "]");        
             System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
-            imprimirLista();
+
         }
     }
     

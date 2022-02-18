@@ -36,6 +36,17 @@ public class Graphviz {
         }
     }
 
+    public void DeleteImage() {
+        try {
+            //Este es de Brown
+            //Process p = Runtime.getRuntime().exec("\"D:\\Users\\Brown\\Documents\\Graphviz\\test2.bat\"");
+            //Este es de NK497JB
+            Process p = Runtime.getRuntime().exec("\"C:\\Users\\NK497JB\\Documents\\Graphviz\\test2-DeleteImage-nk497jb.bat\"");
+        } catch (Exception e) {
+
+        }
+    }
+    
     public void WriteFile( String comando ) {
         
         try {
