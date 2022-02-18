@@ -108,5 +108,13 @@ public class Ventanilla {
     {
         listaClientesEnEspera.insertarFinal(usuarioActivo);
         usuarioActivo = null;
+        listaImagen = new ListaImagen();
+        
     }
+    
+    public void ImprimirListaImagenes()
+    {
+        listaImagen.imprimirLista();
+    }
+    
 }

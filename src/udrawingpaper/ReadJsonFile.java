@@ -127,7 +127,7 @@ public class ReadJsonFile {
         
         temp14 = new String[4];
         temp14[0] = "14"; //id
-        temp14[1] = "Alejandra Tortrix"; //nombre
+        temp14[1] = "Daryan Migitorio"; //nombre
         temp14[2] = "5"; //img color
         temp14[3] = "1"; //img byn
         

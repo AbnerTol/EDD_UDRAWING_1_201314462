@@ -125,11 +125,17 @@ public class ListaVentanillas {
     //Imprime las imágenes contenidas en cada ventanilla
     public void imprimirListaDeImagenesEnVentanilla()
     {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
 
             while (tempNodo != null) {
                 System.out.println(tempNodo.ventanilla.getAllInfo());
+                System.out.println("------------Cadena de imágenes asociadas------------------");
+                
+                tempNodo.ventanilla.ImprimirListaImagenes();
+                
+                System.out.println("----------------------------------------------------------");
                 tempNodo = tempNodo.siguiente;
             }
         } else {
@@ -162,6 +168,7 @@ public class ListaVentanillas {
 
     }
 
+    //Este método genera el comando para las ventanillas solamente
     public String construirComandoGrafo() {
 
         int contador = 0;
@@ -172,6 +179,7 @@ public class ListaVentanillas {
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
 
+            //Para crear los nodos
             while (tempNodo != null) {
 
                 comando = comando + "\n" + "Nodo" + contador + "[" + "label=\"V " + tempNodo.ventanilla.getCodigoVentanilla() + ", U:" + tempNodo.ventanilla.getUserName() + "\",color=\"#40e0d0\", shape=box, style=filled, fillcolor=\"#1C0049\" , fontcolor=\"#FF0096\"];";
@@ -181,7 +189,7 @@ public class ListaVentanillas {
 
             tempNodo = cabeza;
             contador = 0;
-
+            //para crear las conexiones entre nodos
             while (tempNodo != null) {
 
                 if (tempNodo.siguiente == null) {
