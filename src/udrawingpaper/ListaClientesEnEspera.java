@@ -67,8 +67,7 @@ public class ListaClientesEnEspera {
                 
                 if( tempNodo.usuario.getUserId() == imagen.getIdImagen() )
                 {
-                    
-                    System.out.println("Imagen entregada");
+                    tempNodo.usuario.getListaImagen().insertarFinal(imagen);
                     break;
                 }
                 
@@ -104,6 +103,9 @@ public class ListaClientesEnEspera {
 
             while (tempNodo != null) {
                 System.out.println(tempNodo.usuario.getAllInfo());
+                
+                tempNodo.usuario.getListaImagen().imprimirLista();
+                
                 tempNodo = tempNodo.siguiente;
             }
         } else {

@@ -14,7 +14,7 @@ public class Usuario {
     private String nombre;
     private int color;
     private int byn;
-
+    private ListaImagen listaImagen;
     
     public Usuario(int id, String nombre, int color, int byn) 
     {
@@ -22,6 +22,8 @@ public class Usuario {
         this.nombre = nombre;
         this.color = color;
         this.byn = byn;
+        
+        this.listaImagen = new ListaImagen(null, null);
     }
 
     public String getAllInfo() {
@@ -46,5 +48,11 @@ public class Usuario {
     public String getUserName()
     {
         return this.nombre;
+    }
+    
+    //Solo se ocupará mientras esté en Lista de clientes en espera
+    public ListaImagen getListaImagen()
+    {
+        return this.listaImagen;
     }
 }
