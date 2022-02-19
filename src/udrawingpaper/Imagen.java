@@ -30,4 +30,9 @@ public class Imagen {
         return this.TipoImagen;
     }
     
+    public int getIdImagen()
+    {
+        return this.IdUsuario;
+    }
+    
 }

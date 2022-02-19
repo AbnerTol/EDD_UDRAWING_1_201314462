@@ -56,10 +56,31 @@ public class ListaClientesEnEspera {
         }
     }
     
+    //Recorre la lista de clientes, comparando el Id de la imagen que recibió. Cuando encuentra un cliente que hace match con la imagen, le adjunta la imagen
     public void recibirImagenyBuscarlePropietario( Imagen imagen )
     {
-        System.out.println("--TEMP-- IMAGEN RECIBIDA: ");
-        System.out.println( imagen.getAllInfo() );
+        
+        if (tamañoLista >= 1) {
+            Nodo tempNodo = cabeza;
+
+            while (tempNodo != null) {
+                
+                if( tempNodo.usuario.getUserId() == imagen.getIdImagen() )
+                {
+                    
+                    System.out.println("Imagen entregada");
+                    break;
+                }
+                
+                else
+                {
+                    tempNodo = tempNodo.siguiente;
+                    
+                }
+            }
+        } else {
+            System.out.println("Lista vacía");
+        }
     }
     // _________________________________________________________________________Eliminar________________________________________________________________________________
 

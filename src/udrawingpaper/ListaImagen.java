@@ -109,7 +109,9 @@ public class ListaImagen {
                 tempNodo = tempNodo.siguiente;
             }
             
-            System.out.println("IMPRESORAS:------------------------------");
+            System.out.println("Imágenes Agregadas a Impresoras correctamente");
+
+            
             impresora1.imprimirLista();
             impresora2.imprimirLista();
             
