@@ -112,6 +112,17 @@ public class UDrawingPaper {
                         System.out.println("Error: " + e);
                     }
                     break;
+                    
+                    //(Hidden)
+                    case 24:
+                        try {
+
+                        paso.ConstruirGrafoVentanillaCompleta();
+
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                    break;
                 }
             } catch (Exception e) {
 

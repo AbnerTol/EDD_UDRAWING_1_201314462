@@ -14,14 +14,16 @@ public class ListaVentanillas {
     private int tamañoLista;
     private ListaClientesEnEspera listaClientesEnEspera;
 
+    
     public ListaVentanillas() {
         //listaClientesEnEspera = new ListaClientesEnEspera();
     }
 
-    //Recibe la referencia hacia la lista de clientes en espera, creada en la clase Paso
-    public void setListaClientesEnEspera(ListaClientesEnEspera listaClientesEnEspera) {
-        this.listaClientesEnEspera = listaClientesEnEspera;
-    }
+//    //Recibe la referencia hacia la lista de clientes en espera, creada en la clase Paso
+//    public void setListaClientesEnEspera(ListaClientesEnEspera listaClientesEnEspera) {
+//        this.listaClientesEnEspera = listaClientesEnEspera;
+//    }
+
 
     private class Nodo {
 
@@ -169,7 +171,7 @@ public class ListaVentanillas {
     }
 
     //Este método genera el comando para las ventanillas solamente
-    public String construirComandoGrafo() {
+    public String construirComandoGrafo1() {
 
         int contador = 0;
         String comando = "digraph ejemplo1\n"
@@ -215,5 +217,80 @@ public class ListaVentanillas {
         }
 
         return comando;
+    }
+    
+    public String construirComandoGrafo2()
+    {
+        
+        int contador = 0;
+        String comando = "digraph ejemplo1\n"
+                + "{\n"
+                + "    rankdir =LR\n";
+
+        if (tamañoLista >= 1) {
+            Nodo tempNodo = cabeza;
+
+            //Para crear los nodos
+            while (tempNodo != null) {
+
+                comando = comando + "\n" + "Nodo" + contador + "[" + "label=\"V " + tempNodo.ventanilla.getCodigoVentanilla() + ", U:" + tempNodo.ventanilla.getUserName() + "\",color=\"#40e0d0\", shape=box, style=filled, fillcolor=\"#1C0049\" , fontcolor=\"#FF0096\"];";
+                tempNodo = tempNodo.siguiente;
+                contador++;
+            }
+
+            tempNodo = cabeza;
+            contador = 0;
+            //para crear las conexiones entre nodos
+            while (tempNodo != null) {
+
+                if (tempNodo.siguiente == null) {
+                    tempNodo = tempNodo.siguiente;
+                    contador++;
+
+                } else {
+                    comando = comando + "\n" + "Nodo" + contador + " -> " + "Nodo" + (contador + 1) + ";";
+                    tempNodo = tempNodo.siguiente;
+                    contador++;
+
+                }
+            }
+
+            comando = comando + "label = \"Ventanillas\";";
+            
+                       
+            //__________________________________________
+            
+            tempNodo = cabeza;
+
+            //Para crear los nodos de imagenes, recorre la lista otra vez, ejecutando a su vez un recorrido de cada lista en cada ventanilla
+            while (tempNodo != null) {
+
+                if (tempNodo.siguiente == null) {
+                    tempNodo = tempNodo.siguiente;
+                    contador++;
+
+                } else {
+                    comando = comando + tempNodo.ventanilla.ConstruirComandoGrafo(contador);
+                    tempNodo = tempNodo.siguiente;
+                    contador++;
+
+                }
+            }
+            
+            //__________________________________________
+            
+            
+            comando = comando + "}";
+        } else {
+            System.out.println("Lista vacía");
+
+            comando = "digraph ejemplo1\n"
+                    + "{\n"
+                    + "    rankdir =LR\n label = \"Ventanillas(Completo)\";";
+            comando = comando + "\n}";
+        }
+
+        return comando;
+        
     }
 }

@@ -10,18 +10,24 @@ package udrawingpaper;
  */
 public class Imagen {
     
-    String RutaImagen;
-    String TipoImagen;
+    private String RutaImagen;
+    private String TipoImagen;
+    private int IdUsuario;
 
-    Imagen(String RutaImagen, String TipoImagen) {
+    Imagen( int IdUsuario, String RutaImagen, String TipoImagen ) {
+        this.IdUsuario = IdUsuario;
         this.RutaImagen = RutaImagen;
         this.TipoImagen = TipoImagen;
     }
 
     public String getAllInfo() {
-        String info = "Ruta: " + RutaImagen + " Tipo : " + TipoImagen;
+        String info = "Id: " + IdUsuario + "Ruta: " + RutaImagen + " Tipo : " + TipoImagen;
         return info;
     }
-
+    
+    public String getTipoImagen()
+    {
+        return this.TipoImagen;
+    }
     
 }

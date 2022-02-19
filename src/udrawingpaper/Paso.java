@@ -22,6 +22,11 @@ public class Paso {
 
     ListaClientesEnEspera listaClientesEnEspera = new ListaClientesEnEspera();
     
+    ListaClientesAtendidos listaClientesAtendidos = new ListaClientesAtendidos();
+    
+    ImpresoraColor impresora1 = new ImpresoraColor();
+    ImpresoraByN impresora2 = new ImpresoraByN();
+    
     Graphviz grafica = new Graphviz();
     
     //Constructor
@@ -31,7 +36,7 @@ public class Paso {
         users = new ReadJsonFile();
         colaRecepcion = new ListaColaRecepcion();
         listaVentanillas = new ListaVentanillas();
-        listaVentanillas.setListaClientesEnEspera( listaClientesEnEspera );
+        //listaVentanillas.setListaClientesEnEspera( listaClientesEnEspera );
     }
     
     public void EjecutarPaso() {
@@ -93,7 +98,7 @@ public class Paso {
         try
         {
             for (int i = 1; i <= cantidad; i++) {
-                Ventanilla ventanilla = new Ventanilla(i, null, listaClientesEnEspera);
+                Ventanilla ventanilla = new Ventanilla(i, null, listaClientesEnEspera, impresora1, impresora2);
                 listaVentanillas.insertarFinal(ventanilla);
             }
             
@@ -109,7 +114,7 @@ public class Paso {
         
     }
      
-    //________________________________________________________________________ Graphviz_____________________________________________________________________________________
+    //________________________________________________________________________ Impresiones Consola/Graphviz _____________________________________________________________________________________
     
     public void ImprimirListaUsuariosRecepcion()
     {
@@ -125,7 +130,7 @@ public class Paso {
     {
         listaVentanillas.imprimirLista();
         
-        String comando = listaVentanillas.construirComandoGrafo();
+        String comando = listaVentanillas.construirComandoGrafo1();
         //grafica.DeleteImage();
         grafica.WriteFile(comando);
         grafica.RunBat();
@@ -152,4 +157,15 @@ public class Paso {
     {
         listaVentanillas.imprimirListaDeImagenesEnVentanilla();
     }
+    
+    public void ConstruirGrafoVentanillaCompleta()
+    {
+        System.out.println( listaVentanillas.construirComandoGrafo2() );
+    }
+    
+    public void ImprimirListaDeClientesAtendidos()
+    {
+        listaClientesAtendidos.imprimirLista();
+    }
+    
 }

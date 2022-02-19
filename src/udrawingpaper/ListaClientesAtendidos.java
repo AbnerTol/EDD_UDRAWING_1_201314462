@@ -6,9 +6,9 @@ package udrawingpaper;
 
 /**
  *
- * @author Brown
+ * @author NK497JB
  */
-public class ListaClientesEnEspera {
+public class ListaClientesAtendidos {
     
     private Nodo cabeza;
     private int tamañoLista;
@@ -24,18 +24,7 @@ public class ListaClientesEnEspera {
             this.usuario = usuario;
         }
     }
-
-    // _________________________________________________________________________Inserciones________________________________________________________________________________
-//    public void insertarPrincipio(Usuario usuario) {
-//        Nodo nodo = new Nodo(usuario);
-//        nodo.siguiente = cabeza;
-//        cabeza = nodo;
-//
-//        tamañoLista++;
-//
-//        System.out.println("Nuevo usuario en cola de recepción: " + usuario.getAllInfo());
-//    }
-
+    
     public void insertarFinal(Usuario usuario) {
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
@@ -47,31 +36,19 @@ public class ListaClientesEnEspera {
 
             tempNodo.siguiente = nodo;
             tamañoLista++;
-            System.out.println("Nuevo usuario en LISTA DE ESPERA: " + usuario.getUserName());
+            System.out.println("Cliente Atendido: " + usuario.getUserName());
         } else {
             Nodo nodo = new Nodo(usuario);
             cabeza = nodo;
             tamañoLista++;
-            System.out.println("Nuevo usuario en LISTA DE ESPERA: " + usuario.getUserName());
+            System.out.println("Cliente Atendido: " + usuario.getUserName());
         }
     }
-    // _________________________________________________________________________Eliminar________________________________________________________________________________
-
-    //Este sirve para eliminar el primer cliente que llegó a cola de recepción, para ser enviado a la lista de clientes atendidos
-    public Usuario eliminarPrimerCliente() {
-
-        Usuario temp = this.cabeza.usuario;
-        //Eliminar el primero
-        this.cabeza = this.cabeza.siguiente;
-        tamañoLista--;
-        return temp;
-    }
-
-    // _________________________________________________________________________Imprimir Lista________________________________________________________________________________
+    
     public void imprimirLista() {
-        
+
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        System.out.println("Impresión de Lista de Espera: ");
+        System.out.println("------------------------------------------Clientes Atendidos-----------------------------------------: ");
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
 
@@ -88,7 +65,7 @@ public class ListaClientesEnEspera {
     public int tamañoLista() {
         return this.tamañoLista;
     }
-
+    
     public String construirComandoGrafo() {
 
         int contador = 0;
@@ -101,7 +78,7 @@ public class ListaClientesEnEspera {
 
             while (tempNodo != null) {
 
-                comando = comando + "\n" + "Nodo" + contador + "[" + "label=\"" + tempNodo.usuario.getUserName() + "\",color=\"#40e0d0\", style=filled, fillcolor=\"#1C0049\" , fontcolor=\"#FF0096\"];";
+                comando = comando + "\n" + "Nodo" + contador + "[" + "label=\"" + tempNodo.usuario.getUserName() + "\",color=\"#40e0d0\", style=filled, fillcolor=\"#8AC072\" , fontcolor=\"#005B8E\"];";
                 tempNodo = tempNodo.siguiente;
                 contador++;
             }
@@ -123,15 +100,15 @@ public class ListaClientesEnEspera {
                 }
             }
 
-            comando = comando + "label = \"Clientes en Espera\";";
+            comando = comando + "label = \"Clientes atendidos\";";
             comando = comando + "}";
 
         } else {
             System.out.println("Lista vacía");
-            
+
             comando = "digraph ejemplo1\n"
                     + "{\n"
-                    + "    rankdir =LR\n label = \"Clientes en Espera\";}";
+                    + "    rankdir =LR\n label = \"Clientes atendidos\";}";
         }
 
         return comando;

@@ -34,6 +34,10 @@ public class Usuario {
         return this.color;
     }
     
+    public int getUserId()
+    {
+        return id;
+    }
     public int getBWImages() 
     {
         return this.byn;
