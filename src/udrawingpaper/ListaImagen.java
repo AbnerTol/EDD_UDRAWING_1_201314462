@@ -107,12 +107,13 @@ public class ListaImagen {
                 }
                 
                 tempNodo = tempNodo.siguiente;
-                System.out.println("Imagen enviada a impresora0");
             }
             
             System.out.println("IMPRESORAS:------------------------------");
             impresora1.imprimirLista();
             impresora2.imprimirLista();
+            
+            this.cabeza = null;
         } else {
             System.out.println("Lista vacía");
         }

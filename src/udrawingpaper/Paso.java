@@ -24,8 +24,8 @@ public class Paso {
     
     ListaClientesAtendidos listaClientesAtendidos = new ListaClientesAtendidos();
     
-    ImpresoraColor impresora1 = new ImpresoraColor();
-    ImpresoraByN impresora2 = new ImpresoraByN();
+    ImpresoraColor impresora1;
+    ImpresoraByN impresora2;
     
     Graphviz grafica = new Graphviz();
     
@@ -37,6 +37,9 @@ public class Paso {
         colaRecepcion = new ListaColaRecepcion();
         listaVentanillas = new ListaVentanillas();
         //listaVentanillas.setListaClientesEnEspera( listaClientesEnEspera );
+        
+        impresora1 = new ImpresoraColor( listaClientesEnEspera );
+        impresora2 = new ImpresoraByN( listaClientesEnEspera );
     }
     
     public void EjecutarPaso() {
@@ -47,11 +50,16 @@ public class Paso {
         System.out.println("_____________________________________________________________________________________________________________________________________________________");
         System.out.println("                                                                       Paso " + NumeroPasos + "                                                      ");
         System.out.println("_____________________________________________________________________________________________________________________________________________________");
+
+        impresora1.EnviarARespectivoCliente();
+        impresora2.EnviarARespectivoCliente();
         
         AgregarUsuarioAColaRecepción();
 
         agregarImagenAVentanillasCorrespondientes();
         hacerPasarSiguienteUsuarioAVentanilla();
+        
+       
         
     }
 
@@ -166,6 +174,13 @@ public class Paso {
     public void ImprimirListaDeClientesAtendidos()
     {
         listaClientesAtendidos.imprimirLista();
+    }
+    
+    public void ImprimirListaEnImpresoras()
+    {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        impresora1.imprimirLista();
+        impresora2.imprimirLista();
     }
     
 }

@@ -9,9 +9,14 @@ package udrawingpaper;
  * @author NK497JB
  */
 public class ImpresoraByN {
-    
+
     private Nodo cabeza;
     private int tamañoLista;
+    private ListaClientesEnEspera listaClientesEnEspera;
+
+    public ImpresoraByN(ListaClientesEnEspera listaClientesEnEspera) {
+        this.listaClientesEnEspera = listaClientesEnEspera;
+    }
 
     private class Nodo {
 
@@ -38,19 +43,36 @@ public class ImpresoraByN {
             tempNodo.siguiente = nodo;
             tamañoLista++;
 
-            System.out.println("Imagen agregada[" + imagen.getAllInfo() + "]");
-
-            System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
-
         } else {
             Nodo nodo = new Nodo(imagen);
             cabeza = nodo;
             tamañoLista++;
-
-            System.out.println("Imagen agregada[" + imagen.getAllInfo() + "]");
-            System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
-
         }
+    }
+
+    public void EnviarARespectivoCliente() {
+        if (tamañoLista > 0) {
+            //Trae la referencia del primer Nodo
+            Nodo tempNodo = cabeza;
+
+            //envía la imagen (la referencia) hacia otro metodo para que le busque dueño en base a su código 
+            listaClientesEnEspera.recibirImagenyBuscarlePropietario(tempNodo.imagen);
+            //elimina el nodo anteriormente citado, asignado una nueva cabeza
+            eliminarImagen(1);
+        }
+    }
+
+    public void eliminarImagen(int posicion) {
+        if (posicion > tamañoLista) {
+            System.out.println("Error, número invalido.");
+        } else {
+            //Eliminar el primero
+            if (posicion == 1) {
+                this.cabeza = this.cabeza.siguiente;
+                tamañoLista--;
+            }
+        }
+
     }
 
     public void imprimirLista() {
@@ -68,5 +90,5 @@ public class ImpresoraByN {
         }
         System.out.println("]");
     }
-    
+
 }

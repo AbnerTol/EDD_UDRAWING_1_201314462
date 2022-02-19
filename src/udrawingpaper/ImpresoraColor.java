@@ -14,10 +14,15 @@ import java.io.IOException;
  *
  * @author NK497JB
  */
-public class ImpresoraColor {
-        
+public class ImpresoraColor {    
+          
     private Nodo cabeza;
     private int tamañoLista;
+    private ListaClientesEnEspera listaClientesEnEspera;
+
+    public ImpresoraColor(ListaClientesEnEspera listaClientesEnEspera) {
+        this.listaClientesEnEspera = listaClientesEnEspera;
+    }
 
     private class Nodo {
 
@@ -43,22 +48,37 @@ public class ImpresoraColor {
             }
 
             tempNodo.siguiente = nodo;
-            tamañoLista++;
-            
-            System.out.println("Imagen agregada[" + imagen.getAllInfo() + "]");        
-
-            System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
-
-            
+            tamañoLista++;           
         } else {
             Nodo nodo = new Nodo(imagen);
             cabeza = nodo;
             tamañoLista++;
-            
-            System.out.println("Imagen agregada[" + imagen.getAllInfo() + "]");        
-            System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
-
         }
+    }
+    
+    public void EnviarARespectivoCliente() {
+        if (tamañoLista > 0) {
+            //Trae la referencia del primer Nodo
+            Nodo tempNodo = cabeza;
+
+            //envía la imagen (la referencia) hacia otro metodo para que le busque dueño en base a su código 
+            listaClientesEnEspera.recibirImagenyBuscarlePropietario(tempNodo.imagen);
+            //elimina el nodo anteriormente citado, asignado una nueva cabeza
+            eliminar(1);
+        }
+    }
+
+    public void eliminar(int posicion) {
+        if (posicion > tamañoLista) {
+            System.out.println("Error, número invalido.");
+        } else {
+            //Eliminar el primero
+            if (posicion == 1) {
+                this.cabeza = this.cabeza.siguiente;
+                tamañoLista--;
+            }
+        }
+
     }
     
     

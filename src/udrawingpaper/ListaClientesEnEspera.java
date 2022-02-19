@@ -55,6 +55,12 @@ public class ListaClientesEnEspera {
             System.out.println("Nuevo usuario en LISTA DE ESPERA: " + usuario.getUserName());
         }
     }
+    
+    public void recibirImagenyBuscarlePropietario( Imagen imagen )
+    {
+        System.out.println("--TEMP-- IMAGEN RECIBIDA: ");
+        System.out.println( imagen.getAllInfo() );
+    }
     // _________________________________________________________________________Eliminar________________________________________________________________________________
 
     //Este sirve para eliminar el primer cliente que llegó a cola de recepción, para ser enviado a la lista de clientes atendidos
