@@ -55,9 +55,9 @@ public class ListaImagen {
             tempNodo.siguiente = nodo;
             tamañoLista++;
             
-            System.out.println("Imagen agregada a Lista de ventanilla[" + imagen.getAllInfo() + "]");        
+            System.out.print("Imagen agregada[" + imagen.getAllInfo() + "] ");        
 
-            System.out.println("Tamaño de ListaImagen en Ventanilla: " + this.tamañoLista);
+            System.out.println("Cantidad de imágenes en la lista: " + this.tamañoLista);
 
             
         } else {
@@ -65,8 +65,8 @@ public class ListaImagen {
             cabeza = nodo;
             tamañoLista++;
             
-            System.out.println("Imagen agregada[" + imagen.getAllInfo() + "]");        
-            System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
+            System.out.print("Imagen agregada[" + imagen.getAllInfo() + "] ");        
+            System.out.println("Cantidad de imágenes en la lista: " + this.tamañoLista);
 
         }
         
