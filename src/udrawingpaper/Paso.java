@@ -19,10 +19,10 @@ public class Paso {
     ListaVentanillas listaVentanillas;
     
     int NumeroPasos = 0;
-
-    ListaClientesEnEspera listaClientesEnEspera = new ListaClientesEnEspera();
-    
     ListaClientesAtendidos listaClientesAtendidos = new ListaClientesAtendidos();
+
+    ListaClientesEnEspera listaClientesEnEspera = new ListaClientesEnEspera( listaClientesAtendidos );
+    
     
     ImpresoraColor impresora1;
     ImpresoraByN impresora2;
@@ -47,17 +47,23 @@ public class Paso {
         NumeroPasos++;
         
         System.out.print("\n\n\n\n\n\n\n\n\n");
-        System.out.println("_____________________________________________________________________________________________________________________________________________________");
-        System.out.println("                                                                       Paso " + NumeroPasos + "                                                      ");
-        System.out.println("_____________________________________________________________________________________________________________________________________________________");
+        System.out.println("_______________________________________________________________________________________________________________________________________________________________________________________");
+        System.out.println("                                                                                            Paso " + NumeroPasos + "                                                      ");
+        System.out.println("_______________________________________________________________________________________________________________________________________________________________________________________");
 
+        
+        System.out.println("\n\n" + "-------------------------------------------------------------- Impresoras -----------------------------------------------------------");
         impresora1.EnviarARespectivoCliente();
         impresora2.EnviarARespectivoCliente();
+        System.out.println("-------------------------------------------------------------- Impresoras -----------------------------------------------------------");
         
+        System.out.println("\n\n");
         AgregarUsuarioAColaRecepción();
 
+        System.out.println("\n\n" + "-------------------------------------------------------------- Ventanillas -----------------------------------------------------------");
         agregarImagenAVentanillasCorrespondientes();
         hacerPasarSiguienteUsuarioAVentanilla();
+        System.out.println("-------------------------------------------------------------- Ventanillas -----------------------------------------------------------");
         
        
         
@@ -170,17 +176,18 @@ public class Paso {
     {
         System.out.println( listaVentanillas.construirComandoGrafo2() );
     }
-    
-    public void ImprimirListaDeClientesAtendidos()
-    {
-        listaClientesAtendidos.imprimirLista();
-    }
-    
+        
     public void ImprimirListaEnImpresoras()
     {
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         impresora1.imprimirLista();
         impresora2.imprimirLista();
+    }
+    
+    public void ImprimirListaDeClientesAtendidos()
+    {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        listaClientesAtendidos.imprimirLista();
     }
     
 }

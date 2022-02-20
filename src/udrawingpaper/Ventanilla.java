@@ -86,6 +86,7 @@ public class Ventanilla {
     
     public void AgregarImagen()
     {
+        //System.out.println("Ventanilla " + this.codigoVentanilla );
         if( this.usuarioActivo != null )
         {
             //Valida si aún existen imágenes a color

@@ -55,9 +55,9 @@ public class ListaImagen {
             tempNodo.siguiente = nodo;
             tamañoLista++;
             
-            System.out.println("Imagen agregada[" + imagen.getAllInfo() + "]");        
+            System.out.println("Imagen agregada a Lista de ventanilla[" + imagen.getAllInfo() + "]");        
 
-            System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
+            System.out.println("Tamaño de ListaImagen en Ventanilla: " + this.tamañoLista);
 
             
         } else {
@@ -69,6 +69,8 @@ public class ListaImagen {
             System.out.println("Tamaño de ListaImagen: " + this.tamañoLista);
 
         }
+        
+        System.out.println("");
     }
     
     
@@ -88,6 +90,10 @@ public class ListaImagen {
         System.out.println("]");
     }
     
+    public int getTamañoLista()
+    {
+        return this.tamañoLista;
+    }
     public void EnviarImagenesAImpresora()
     {
 
@@ -167,4 +173,5 @@ public class ListaImagen {
         return comando;
     }
        
+    
 }

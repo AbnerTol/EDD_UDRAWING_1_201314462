@@ -12,6 +12,7 @@ public class ListaClientesEnEspera {
     
     private Nodo cabeza;
     private int tamañoLista;
+    private ListaClientesAtendidos listaClientesAtendidos;
 
     private class Nodo {
 
@@ -25,6 +26,10 @@ public class ListaClientesEnEspera {
         }
     }
 
+    public ListaClientesEnEspera( ListaClientesAtendidos listaClientesAtendidos )
+    {
+        this.listaClientesAtendidos = listaClientesAtendidos;
+    }
     // _________________________________________________________________________Inserciones________________________________________________________________________________
 //    public void insertarPrincipio(Usuario usuario) {
 //        Nodo nodo = new Nodo(usuario);
@@ -62,17 +67,32 @@ public class ListaClientesEnEspera {
         
         if (tamañoLista >= 1) {
             Nodo tempNodo = cabeza;
-
+            int posicion = 1;
+            
             while (tempNodo != null) {
                 
+                //Valida si el id del usuario es el mismo id que trae la imagen recibida
                 if( tempNodo.usuario.getUserId() == imagen.getIdImagen() )
                 {
+                    //Inserta la imagen en el usuario respectivo
                     tempNodo.usuario.getListaImagen().insertarFinal(imagen);
+                    
+                    //Verifica si ya tiene todas sus imagenes
+                    if(  VerificarSiUsuarioTieneTodasSusImagenes(tempNodo.usuario ) )
+                    {
+                        //Envía el usuario a la lista clientes atendidos 
+                        EnviarUsuarioAClientesAtendidos( tempNodo.usuario );
+                        //Elimina el usuario actual
+                        eliminar( posicion );
+                        System.out.println("--------------------------Cliente Atendido------------------------");
+                    }
+                   ;
                     break;
                 }
                 
                 else
                 {
+                    
                     tempNodo = tempNodo.siguiente;
                     
                 }
@@ -81,18 +101,83 @@ public class ListaClientesEnEspera {
             System.out.println("Lista vacía");
         }
     }
+    
+    public boolean VerificarSiUsuarioTieneTodasSusImagenes(  Usuario usuario )
+    {
+        int totalImagenes = usuario.getBWImages() + usuario.getColorImages();
+        int imagenesRecibidas = usuario.getListaImagen().getTamañoLista();
+
+        if (totalImagenes == imagenesRecibidas) {
+            
+            return true;
+            
+        } else {
+            return false;
+        }
+    }
+    
+    public void EnviarUsuarioAClientesAtendidos( Usuario usuario )
+    {
+        listaClientesAtendidos.insertarFinal( usuario );
+    }
+    
     // _________________________________________________________________________Eliminar________________________________________________________________________________
 
-    //Este sirve para eliminar el primer cliente que llegó a cola de recepción, para ser enviado a la lista de clientes atendidos
-    public Usuario eliminarPrimerCliente() {
+//    //Este sirve para eliminar el primer cliente que llegó a cola de recepción, para ser enviado a la lista de clientes atendidos
+//    public Usuario eliminarPrimerCliente() {
+//
+//        Usuario temp = this.cabeza.usuario;
+//        //Eliminar el primero
+//        this.cabeza = this.cabeza.siguiente;
+//        tamañoLista--;
+//        return temp;
+//    }
+    
+    public void eliminar(int posicion) {
+        if (posicion > tamañoLista) {
+            System.out.println("Error, número invalido.");
+        } else {
+            //Eliminar el primero
+            if (posicion == 1) {
+                this.cabeza = this.cabeza.siguiente;
+                tamañoLista--;
+            } //Eliminar el último
+            else if (posicion == tamañoLista) {
+                Nodo temp = cabeza;
+                for (int i = 1; i < tamañoLista - 1; i++) {
+                    temp = temp.siguiente;
+                }
 
-        Usuario temp = this.cabeza.usuario;
-        //Eliminar el primero
-        this.cabeza = this.cabeza.siguiente;
-        tamañoLista--;
-        return temp;
+                temp.siguiente = null;
+                tamañoLista--;
+
+            } //Eliminar en medio
+            else {
+                int n = 1;
+                Nodo temp1 = cabeza;
+                Nodo temp2 = null;
+
+                while (temp1 != null) {
+                    if (n < posicion) {
+                        temp2 = temp1;
+                        temp1 = temp1.siguiente;
+
+                        System.out.println(n);
+                    } else {
+                        temp2.siguiente = temp1.siguiente;
+                        System.out.println("Llegó al número solicitado, procediendo ...");
+                        break;
+                    }
+
+                    n++;
+                }
+
+                tamañoLista--;
+
+            }
+        }
+
     }
-
     // _________________________________________________________________________Imprimir Lista________________________________________________________________________________
     public void imprimirLista() {
         
