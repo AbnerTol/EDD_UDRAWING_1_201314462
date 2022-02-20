@@ -93,12 +93,14 @@ public class Ventanilla {
             if (this.color > 0) {
                 this.color--;
                 Imagen imagen = new Imagen( usuarioActivo.getUserId(), usuarioActivo.getUserName(), "Color");
+                System.out.print("Ventanilla " + this.codigoVentanilla + ", " );
                 listaImagen.insertarFinal(imagen);
 
             } //En caso que no hayan imágnes a color entonces valida las imágenes blanco y negro
             else if (this.bw > 0) {
                 this.bw--;
                 Imagen imagen = new Imagen( usuarioActivo.getUserId(), usuarioActivo.getUserName(), "BW");
+                System.out.print("Ventanilla " + this.codigoVentanilla + ", ");
                 listaImagen.insertarFinal(imagen);
             } //En caso que no existan más imágenes, toma la referencia del usuario y la envía hacia ListaClientesEnEspera y elimina la referencia de esta ventanilla, quedando así disponible.
             else {

@@ -134,22 +134,21 @@ public class Paso {
     public void ImprimirListaUsuariosRecepcion()
     {
         colaRecepcion.imprimirLista();        
-        String comando = colaRecepcion.construirComandoGrafo();
-        //grafica.DeleteImage();
-        grafica.WriteFile(comando);
-        grafica.RunBat();
-        grafica.OpenImage();
+        
+        //String comando = colaRecepcion.construirComandoGrafo();       
+        //grafica.WriteFile(comando);
+        //grafica.RunBat();
+        //grafica.OpenImage();
     }
     
     public void ImprimirListaVentanillas()
     {
         listaVentanillas.imprimirLista();
         
-        String comando = listaVentanillas.construirComandoGrafo1();
-        //grafica.DeleteImage();
-        grafica.WriteFile(comando);
-        grafica.RunBat();
-        grafica.OpenImage();
+//        String comando = listaVentanillas.construirComandoGrafo1();
+//        grafica.WriteFile(comando);
+//        grafica.RunBat();
+//        grafica.OpenImage();
     }
     
     public void agregarImagenAVentanillasCorrespondientes()
@@ -162,10 +161,10 @@ public class Paso {
         listaClientesEnEspera.imprimirLista();
         
         String comando = listaClientesEnEspera.construirComandoGrafo();
-        //grafica.DeleteImage();
-        grafica.WriteFile(comando);
-        grafica.RunBat();
-        grafica.OpenImage();
+        
+//        grafica.WriteFile(comando);
+//        grafica.RunBat();
+//        grafica.OpenImage();
     }
     
     public void ImprimirListaDeImagenesEnVentanilla()

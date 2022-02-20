@@ -56,8 +56,7 @@ public class ListaImagen {
             tamañoLista++;
             
             System.out.print("Imagen agregada[" + imagen.getAllInfo() + "] ");        
-
-            System.out.println("Cantidad de imágenes en la lista: " + this.tamañoLista);
+            System.out.println("(La lista contiene " + this.tamañoLista + " imágenes)");
 
             
         } else {
@@ -66,7 +65,7 @@ public class ListaImagen {
             tamañoLista++;
             
             System.out.print("Imagen agregada[" + imagen.getAllInfo() + "] ");        
-            System.out.println("Cantidad de imágenes en la lista: " + this.tamañoLista);
+            System.out.println("(La lista contiene " + this.tamañoLista + " imágenes)");
 
         }
         

@@ -33,7 +33,9 @@ public class UDrawingPaper {
                 
         do {
             try {
-                opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "1.Cargar Lista de usuarios (TEMP)\n2.Crear ventanillas \n7.Ejecutar Paso\n11.Salir"));
+                opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "Actividades\n1.Cargar Lista de usuarios (TEMP)\n2.Crear ventanillas \n7.Ejecutar Paso\n"
+                        + "\nImpresiones: \n20.Imprimir Cola de Recepción\n22.Imprimir Ventanillas\n23.Imprimir Ventanillas con imágenes\n24.TEMP NO DIPONIBLE\n25.Ver Impresoras\n"
+                        + "26.Lista de Clientes Atendidos\n\n12.Salir"));
 
                 switch (opcion) {
                     
@@ -66,7 +68,7 @@ public class UDrawingPaper {
                     
 
                         
-                    case 11:
+                    case 12:
 
                         break;
                         
@@ -145,12 +147,22 @@ public class UDrawingPaper {
                         System.out.println("Error: " + e);
                     }
                     break;
+                    
+                    //(Hidden)
+                    default:
+                        try {
+                            System.out.println("\n\n-------------- Número inválido, intente de nuevo. ---------------\n\n");
+
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                    break;
                 }
             } catch (Exception e) {
 
             }
 
-        } while (opcion != 11);
+        } while (opcion != 12);
         
     }
     
