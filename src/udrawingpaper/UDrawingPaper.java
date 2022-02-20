@@ -33,7 +33,7 @@ public class UDrawingPaper {
                 
         do {
             try {
-                opcion = Integer.parseInt( JOptionPane.showInputDialog(null, "Actividades\n1.Cargar Lista de usuarios (TEMP)\n2.Crear ventanillas \n7.Ejecutar Paso\n"
+                opcion = Integer.parseInt( JOptionPane.showInputDialog(null, "Actividades\n1.Carga Masiva (TEMP)\n2.Crear ventanillas \n7.Ejecutar Paso\n"
                         + "\nImpresiones: \n20.Imprimir Cola de Recepción\n21.Imprimir Ventanillas\n22.Ver Clientes en Espera\n23.Imprimir Ventanillas con imágenes\n24.TEMP NO DIPONIBLE\n25.Ver Impresoras\n"
                         + "26.Lista de Clientes Atendidos\n\n12.Salir") );
 

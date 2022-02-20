@@ -78,7 +78,7 @@ public class Paso {
     public void AgregarUsuarioAColaRecepción()
     {
         Random random = new Random();
-        String temp1[] = users.GetUser(random.nextInt(19) + 1);
+        String temp1[] = users.GetUser(random.nextInt(39) + 1);
 
         Usuario usuario1 = new Usuario(Integer.parseInt(temp1[0]), temp1[1], Integer.parseInt(temp1[2]), Integer.parseInt(temp1[3]));
 

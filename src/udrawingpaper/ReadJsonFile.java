@@ -40,6 +40,26 @@ public class ReadJsonFile {
         String temp18[];
         String temp19[];
         String temp20[];
+        String temp21[];
+        String temp22[];
+        String temp23[];
+        String temp24[];
+        String temp25[];
+        String temp26[];
+        String temp27[];
+        String temp28[];
+        String temp29[];
+        String temp30[];
+        String temp31[];
+        String temp32[];
+        String temp33[];
+        String temp34[];
+        String temp35[];
+        String temp36[];
+        String temp37[];
+        String temp38[];
+        String temp39[];
+        String temp40[];
         
         temp0 = new String[4];
         temp0[0] = "1"; //id
@@ -167,6 +187,128 @@ public class ReadJsonFile {
         temp20[2] = "5"; //img color
         temp20[3] = "1"; //img byn
         
+        
+        temp21 = new String[4];
+        temp21[0] = "21"; //id
+        temp21[1] = "Abraham Lincoln"; //nombre
+        temp21[2] = "1"; //img color
+        temp21[3] = "1"; //img byn
+        
+        temp22 = new String[4];
+        temp22[0] = "22"; //id
+        temp22[1] = "Sara Korg"; //nombre
+        temp22[2] = "2"; //img color
+        temp22[3] = "2"; //img byn
+        
+        temp23 = new String[4];
+        temp23[0] = "23"; //id
+        temp23[1] = "Natalio Fan"; //nombre
+        temp23[2] = "3"; //img color
+        temp23[3] = "3"; //img byn
+        
+        temp24 = new String[4];
+        temp24[0] = "24"; //id
+        temp24[1] = "Mary Pluma"; //nombre
+        temp24[2] = "4"; //img color
+        temp24[3] = "4"; //img byn
+        
+        temp25 = new String[4];
+        temp25[0] = "25"; //id
+        temp25[1] = "Oscar Homo"; //nombre
+        temp25[2] = "4"; //img color
+        temp25[3] = "4"; //img byn
+        
+        temp26 = new String[4];
+        temp26[0] = "26"; //id
+        temp26[1] = "Lety Staff"; //nombre
+        temp26[2] = "1"; //img color
+        temp26[3] = "3"; //img byn
+        
+        temp27 = new String[4];
+        temp27[0] = "27"; //id
+        temp27[1] = "Andrea Boccelli"; //nombre
+        temp27[2] = "1"; //img color
+        temp27[3] = "4"; //img byn
+        
+        temp28 = new String[4];
+        temp28[0] = "28"; //id
+        temp28[1] = "Lorenzo Loro"; //nombre
+        temp28[2] = "10"; //img color
+        temp28[3] = "10"; //img byn
+        
+        temp29 = new String[4];
+        temp29[0] = "29"; //id
+        temp29[1] = "Jonathan Kira"; //nombre
+        temp29[2] = "2"; //img color
+        temp29[3] = "11"; //img byn
+        
+        temp30 = new String[4];
+        temp30[0] = "30"; //id
+        temp30[1] = "Gabriel Mouse"; //nombre
+        temp30[2] = "4"; //img color
+        temp30[3] = "2"; //img byn
+        
+        temp31 = new String[4];
+        temp31[0] = "31"; //id
+        temp31[1] = "Harrison Ford"; //nombre
+        temp31[2] = "5"; //img color
+        temp31[3] = "1"; //img byn
+        
+        temp32 = new String[4];
+        temp32[0] = "32"; //id
+        temp32[1] = "Monica Cable"; //nombre
+        temp32[2] = "4"; //img color
+        temp32[3] = "1"; //img byn
+        
+        temp33 = new String[4];
+        temp33[0] = "33"; //id
+        temp33[1] = "Nelson Peperoni"; //nombre
+        temp33[2] = "1"; //img color
+        temp33[3] = "1"; //img byn
+        
+        temp34 = new String[4];
+        temp34[0] = "34"; //id
+        temp34[1] = "Inocencio Cuero"; //nombre
+        temp34[2] = "1"; //img color
+        temp34[3] = "6"; //img byn
+        
+        temp35 = new String[4];
+        temp35[0] = "35"; //id
+        temp35[1] = "Esteban Durazno"; //nombre
+        temp35[2] = "8"; //img color
+        temp35[3] = "1"; //img byn
+        
+        temp36 = new String[4];
+        temp36[0] = "36"; //id
+        temp36[1] = "Hazel RGB"; //nombre
+        temp36[2] = "5"; //img color
+        temp36[3] = "6"; //img byn
+        
+        temp37 = new String[4];
+        temp37[0] = "37"; //id
+        temp37[1] = "Estefany GPU"; //nombre
+        temp37[2] = "1"; //img color
+        temp37[3] = "2"; //img byn
+        
+        temp38 = new String[4];
+        temp38[0] = "38"; //id
+        temp38[1] = "Sussan Brujla"; //nombre
+        temp38[2] = "1"; //img color
+        temp38[3] = "1"; //img byn
+        
+        temp39 = new String[4];
+        temp39[0] = "39"; //id
+        temp39[1] = "Veronica Nomo"; //nombre
+        temp39[2] = "1"; //img color
+        temp39[3] = "1"; //img byn
+        
+        temp40 = new String[4];
+        temp40[0] = "40"; //id
+        temp40[1] = "Abner Intel"; //nombre
+        temp40[2] = "7"; //img color
+        temp40[3] = "1"; //img byn
+        
+        
         user = new ArrayList<String[]>();
         user.add(temp0);
         user.add(temp1);
@@ -189,6 +331,26 @@ public class ReadJsonFile {
         user.add(temp18);
         user.add(temp19);
         user.add(temp20);
+        user.add(temp21);
+        user.add(temp22);
+        user.add(temp23);
+        user.add(temp24);
+        user.add(temp25);
+        user.add(temp26);
+        user.add(temp27);
+        user.add(temp28);
+        user.add(temp29);
+        user.add(temp30);
+        user.add(temp31);
+        user.add(temp32);
+        user.add(temp33);
+        user.add(temp34);
+        user.add(temp35);
+        user.add(temp36);
+        user.add(temp37);
+        user.add(temp38);
+        user.add(temp39);
+        user.add(temp40);
         
         System.out.println("Usuarios creados exitosamente");
     }
