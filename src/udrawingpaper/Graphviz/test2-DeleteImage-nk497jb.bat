@@ -1,0 +1,1 @@
+@cmd /k "del C:\Users\NK497JB\Documents\Graphviz\imagen.png"

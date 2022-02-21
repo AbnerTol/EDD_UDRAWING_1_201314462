@@ -1,0 +1,1 @@
+@cmd /k "C:\Users\NK497JB\Documents\Graphviz\imagen.png"

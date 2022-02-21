@@ -1,0 +1,9 @@
+digraph ejemplo1
+{
+    rankdir =LR
+
+Nodo0[label="V 1, U:Vito Corleone",color="#40e0d0", shape=box, style=filled, fillcolor="#1C0049" , fontcolor="#FF0096"];
+Nodo1[label="V 2, U:Al Pacino",color="#40e0d0", shape=box, style=filled, fillcolor="#1C0049" , fontcolor="#FF0096"];
+Nodo2[label="V 3, U:Ana Tax",color="#40e0d0", shape=box, style=filled, fillcolor="#1C0049" , fontcolor="#FF0096"];
+Nodo0 -> Nodo1;
+Nodo1 -> Nodo2;label = "Ventanillas";}

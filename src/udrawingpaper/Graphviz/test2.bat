@@ -1,0 +1,1 @@
+@cmd /k "dot.exe -Tpng D:\Users\Brown\Documents\Graphviz\ejemplo1.dot -o D:\Users\Brown\Documents\Graphviz\imagen.png"
