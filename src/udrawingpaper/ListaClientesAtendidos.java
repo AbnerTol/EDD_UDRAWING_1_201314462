@@ -13,11 +13,15 @@ public class ListaClientesAtendidos {
     private Nodo cabeza;
     private int tamañoLista;
     private Reporte1 reporte1;
+    private Reporte2 reporte2;
+    private Reporte3 reporte3;
 
-    public ListaClientesAtendidos( Reporte1 reporte1 )
+    public ListaClientesAtendidos( Reporte1 reporte1, Reporte2 reporte2, Reporte3 reporte3 )
     {
         System.out.println("----------------------constructor de clientes atendidos");
         this.reporte1 = reporte1;
+        this.reporte2 = reporte2;
+        this.reporte3 = reporte3;
     }
     
     private class Nodo {
@@ -46,6 +50,8 @@ public class ListaClientesAtendidos {
             tamañoLista++;
             //Envía una copia de la referencia hacia reportes1 para que valide si es el nuevo top o no
             reporte1.ValidarTop( usuario );
+            reporte2.ValidarUsuarioEntrante( usuario );
+            reporte3.ValidarUsuarioEntrante( usuario );
             System.out.println("Cliente Atendido: " + usuario.getUserName());
         } else {
             Nodo nodo = new Nodo(usuario);
@@ -53,6 +59,8 @@ public class ListaClientesAtendidos {
             tamañoLista++;
             //Envía una copia de la referencia hacia reportes1 para que valide si es el nuevo top o no
             reporte1.ValidarTop(usuario);
+            reporte2.ValidarUsuarioEntrante(usuario);
+            reporte3.ValidarUsuarioEntrante( usuario );
             System.out.println("Cliente Atendido: " + usuario.getUserName());
         }
     }

@@ -16,11 +16,13 @@ public class Paso {
     ListaColaRecepcion colaRecepcion;
     ReadJsonFile users;
     Reporte1 reporte1 = new Reporte1();
+    Reporte2 reporte2 = new Reporte2();
+    Reporte3 reporte3 = new Reporte3();
     
     ListaVentanillas listaVentanillas;
     
     int NumeroPasos = 0;
-    ListaClientesAtendidos listaClientesAtendidos = new ListaClientesAtendidos( reporte1 );
+    ListaClientesAtendidos listaClientesAtendidos = new ListaClientesAtendidos( reporte1, reporte2, reporte3 );
 
     ListaClientesEnEspera listaClientesEnEspera = new ListaClientesEnEspera( listaClientesAtendidos );
     
@@ -200,4 +202,15 @@ public class Paso {
         reporte1.MostrarUsuarioConMasPasos();
     }
     
+    public void Top5ClientesColor()
+    {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        reporte2.getTop5();
+    }
+    
+    public void Top5ClientesByn()
+    {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        reporte3.getTop5();
+    }
 }
