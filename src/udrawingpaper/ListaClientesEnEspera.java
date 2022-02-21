@@ -75,7 +75,8 @@ public class ListaClientesEnEspera {
                 if( tempNodo.usuario.getUserId() == imagen.getIdImagen() )
                 {
                     //Inserta la imagen en el usuario respectivo
-                    tempNodo.usuario.getListaImagen().insertarFinal(imagen);
+                    tempNodo.usuario.getListaImagen().insertarFinal(imagen);                               
+                    tempNodo.usuario.ActualizarVariablepasosRequeridos();
                     
                     //Verifica si ya tiene todas sus imagenes
                     if(  VerificarSiUsuarioTieneTodasSusImagenes(tempNodo.usuario ) )
@@ -92,7 +93,7 @@ public class ListaClientesEnEspera {
                 
                 else
                 {
-                    
+                    tempNodo.usuario.ActualizarVariablepasosRequeridos();
                     tempNodo = tempNodo.siguiente;
                     
                 }

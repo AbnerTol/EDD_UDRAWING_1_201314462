@@ -15,11 +15,12 @@ public class Paso {
     int numeroDePasos;
     ListaColaRecepcion colaRecepcion;
     ReadJsonFile users;
+    Reporte1 reporte1 = new Reporte1();
     
     ListaVentanillas listaVentanillas;
     
     int NumeroPasos = 0;
-    ListaClientesAtendidos listaClientesAtendidos = new ListaClientesAtendidos();
+    ListaClientesAtendidos listaClientesAtendidos = new ListaClientesAtendidos( reporte1 );
 
     ListaClientesEnEspera listaClientesEnEspera = new ListaClientesEnEspera( listaClientesAtendidos );
     
@@ -28,6 +29,7 @@ public class Paso {
     ImpresoraByN impresora2;
     
     Graphviz grafica = new Graphviz();
+    
     
     //Constructor
     public Paso()
@@ -188,6 +190,14 @@ public class Paso {
     {
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         listaClientesAtendidos.imprimirLista();
+    }
+    
+     //________________________________________________________________________ Reportes _____________________________________________________________________________________
+ 
+    public void ClienteConMasPasos()
+    {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        reporte1.MostrarUsuarioConMasPasos();
     }
     
 }

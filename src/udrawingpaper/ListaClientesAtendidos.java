@@ -12,7 +12,14 @@ public class ListaClientesAtendidos {
     
     private Nodo cabeza;
     private int tamañoLista;
+    private Reporte1 reporte1;
 
+    public ListaClientesAtendidos( Reporte1 reporte1 )
+    {
+        System.out.println("----------------------constructor de clientes atendidos");
+        this.reporte1 = reporte1;
+    }
+    
     private class Nodo {
 
         public Usuario usuario;
@@ -22,6 +29,7 @@ public class ListaClientesAtendidos {
         //Constructor
         public Nodo(Usuario usuario) {
             this.usuario = usuario;
+            
         }
     }
     
@@ -36,11 +44,15 @@ public class ListaClientesAtendidos {
 
             tempNodo.siguiente = nodo;
             tamañoLista++;
+            //Envía una copia de la referencia hacia reportes1 para que valide si es el nuevo top o no
+            reporte1.ValidarTop( usuario );
             System.out.println("Cliente Atendido: " + usuario.getUserName());
         } else {
             Nodo nodo = new Nodo(usuario);
             cabeza = nodo;
             tamañoLista++;
+            //Envía una copia de la referencia hacia reportes1 para que valide si es el nuevo top o no
+            reporte1.ValidarTop(usuario);
             System.out.println("Cliente Atendido: " + usuario.getUserName());
         }
     }
@@ -53,7 +65,8 @@ public class ListaClientesAtendidos {
             Nodo tempNodo = cabeza;
 
             while (tempNodo != null) {
-                System.out.println(tempNodo.usuario.getAllInfo());
+                System.out.print(tempNodo.usuario.getAllInfo());
+                System.out.println(", atendido en ventanilla " + tempNodo.usuario.getVentanillaQueAtendio() + " con un total de " + tempNodo.usuario.getPasosRequeridos() + " pasos");
                 tempNodo = tempNodo.siguiente;
             }
         } else {
