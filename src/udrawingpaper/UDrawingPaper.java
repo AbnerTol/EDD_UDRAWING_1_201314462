@@ -34,7 +34,7 @@ public class UDrawingPaper {
         do {
             try {
                 opcion = Integer.parseInt( JOptionPane.showInputDialog(null, "Actividades\n1.Carga Masiva (TEMP)\n2.Crear ventanillas \n7.Ejecutar Paso\n"
-                        + "\nImpresiones: \n20.Imprimir Cola de Recepción\n21.Imprimir Ventanillas\n22.Ver Clientes en Espera\n23.Imprimir Ventanillas con imágenes\n24.TEMP NO DIPONIBLE\n25.Ver Impresoras\n"
+                        + "\nImpresiones: \n18.Grafo Impresora1\n19.Grafo Impresora2\n20.Imprimir Cola de Recepción\n21.Imprimir Ventanillas\n22.Ver Clientes en Espera\n23.Imprimir Ventanillas con imágenes\n24.TEMP NO DIPONIBLE\n25.Ver Impresoras\n"
                         + "26.Lista de Clientes Atendidos\n\nReportes\n27.Clientes con más pasos en el sistema\n28.Top 5 clientes color\n29.Top 5 clientes ByN\n\n12.Salir") );
 
                 switch (opcion) {
@@ -72,6 +72,26 @@ public class UDrawingPaper {
 
                         break;
                         
+                    //(Hidden)
+                    case 18:
+                        try {
+
+                        paso.GrafoImpresora1();
+
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                    break;
+                    //(Hidden)
+                    case 19:
+                        try {
+
+                        paso.GrafoImpresora2();
+
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e);
+                    }
+                    break;
                     //(Hidden)
                     case 20:
                         try {

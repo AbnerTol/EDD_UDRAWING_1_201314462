@@ -82,7 +82,7 @@ public class Paso {
     public void AgregarUsuarioAColaRecepción()
     {
         Random random = new Random();
-        String temp1[] = users.GetUser(random.nextInt(39) + 1);
+        String temp1[] = users.GetUser(random.nextInt(59) + 1);
 
         Usuario usuario1 = new Usuario(Integer.parseInt(temp1[0]), temp1[1], Integer.parseInt(temp1[2]), Integer.parseInt(temp1[3]));
 
@@ -139,20 +139,20 @@ public class Paso {
     {
         colaRecepcion.imprimirLista();        
         
-        //String comando = colaRecepcion.construirComandoGrafo();       
-        //grafica.WriteFile(comando);
-        //grafica.RunBat();
-        //grafica.OpenImage();
+        String comando = colaRecepcion.construirComandoGrafo();       
+        grafica.WriteFile(comando);
+        grafica.RunBat();
+        grafica.OpenImage();
     }
     
     public void ImprimirListaVentanillas()
     {
         listaVentanillas.imprimirLista();
         
-//        String comando = listaVentanillas.construirComandoGrafo1();
-//        grafica.WriteFile(comando);
-//        grafica.RunBat();
-//        grafica.OpenImage();
+        String comando = listaVentanillas.construirComandoGrafo1();
+        grafica.WriteFile(comando);
+        grafica.RunBat();
+        grafica.OpenImage();
     }
     
     public void agregarImagenAVentanillasCorrespondientes()
@@ -166,9 +166,9 @@ public class Paso {
         
         String comando = listaClientesEnEspera.construirComandoGrafo();
         
-//        grafica.WriteFile(comando);
-//        grafica.RunBat();
-//        grafica.OpenImage();
+        grafica.WriteFile(comando);
+        grafica.RunBat();
+        grafica.OpenImage();
     }
     
     public void ImprimirListaDeImagenesEnVentanilla()
@@ -188,10 +188,29 @@ public class Paso {
         impresora2.imprimirLista();
     }
     
+    public void GrafoImpresora1()
+    {
+        String comando = impresora1.construirComandoGrafo();
+        grafica.WriteFile(comando);
+        grafica.RunBat();
+        grafica.OpenImage();
+    }
+    public void GrafoImpresora2()
+    {
+        String comando = impresora2.construirComandoGrafo();
+        grafica.WriteFile(comando);
+        grafica.RunBat();
+        grafica.OpenImage();
+    }
+    
     public void ImprimirListaDeClientesAtendidos()
     {
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         listaClientesAtendidos.imprimirLista();
+        String comando = listaClientesAtendidos.construirComandoGrafo();
+        grafica.WriteFile(comando);
+        grafica.RunBat();
+        grafica.OpenImage();
     }
     
      //________________________________________________________________________ Reportes _____________________________________________________________________________________
